@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 outdoor_day_items = ['hiking a mountain', 'snorkeling', 'city tour', 'arts festival', 'street food', 'beach', 'boarding', 'famous monuments', 'shopping plaza', 'onsen']
 
 outdoor_night_items = ['concert', 'fancy dinner', 'outdoor bar', 'onsen', 'observatory']
@@ -18,19 +20,25 @@ type_of_item = ['sport', 'food', 'music', 'museum', 'relax and rejuvinate', 'sho
 
 rating = [1,2,3,4,5]
 
+addresses = [
+
+]
+
 #OUTDOOR DAY
 
 25.times do
+  country = Faker::Address.country
   Item.create! ({
     title: outdoor_day_items.sample,
     url: 'www.eventbrite.com',
-    address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012",
+    country: "#{}",
+    city: "#{}",
+    address: "#{}",
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
-    country: Faker::Address.country,
     rating: rating.sample,
-    rating: rand(0..20)
+    price: rand(0..20)
 })
 end
 
@@ -40,12 +48,15 @@ end
   Item.create! ({
     title: indoor_day_items.sample,
     url: 'www.eventbrite.com',
+    country: "#{}",
+    city: "#{}",
+    address: "#{}",
     address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012#",
     time_of_day: 'Nighttime',
     weather: 'Indoor',
     category: type_of_item.sample,
-    country: Faker::Address.country,
-    rating: rand(0..20)
+    rating: rating.sample,
+    price: rand(0..20)
 })
 end
 
@@ -55,12 +66,15 @@ end
   Item.create! ({
     title: outdoor_night_items.sample,
     url: 'www.eventbrite.com',
+    country: "#{}",
+    city: "#{}",
+    address: "#{}",
     address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012#",
     time_of_day: 'Nighttime',
     weather: 'Outdoor',
     category: type_of_item.sample,
-    country: Faker::Address.country,
-    rating: rand(0..20)
+    rating: rating.sample,
+    price: rand(0..20)
 })
 end
 
@@ -70,13 +84,14 @@ end
   Item.create! ({
     title: indoor_night_items.sample,
     url: 'www.eventbrite.com',
-    address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012#",
+    country: "#{}",
+    city: "#{}",
+    address: "#{}",
     time_of_day: 'Daytime',
     weather: 'Indoor',
     category: type_of_item.sample,
-    city: 'unknown',
-    country: Faker::Address.country,
-    rating: rand(0..20)
+    rating: rating.sample,
+    price: rand(0..20)
 })
 end
 
