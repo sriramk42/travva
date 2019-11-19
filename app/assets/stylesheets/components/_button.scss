@@ -1,0 +1,31 @@
+.turquoise-button {
+  color: $light-gray;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $turquoise;
+  transition: background 0.3s ease;
+  border: 1px solid $turquoise;
+
+   &:hover{
+    background: $dark-gray;
+    color: $turquoise;
+    text-decoration: none;
+  }
+}
+
+.dark-gray-button {
+  color: $turquoise;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $dark-gray;
+  transition: background 0.3s ease;
+  border: 1px solid $dark-gray;
+
+   &:hover{
+    background: $turquoise;
+    color: $light-gray;
+    text-decoration: none;
+  }
+}
