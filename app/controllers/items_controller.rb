@@ -45,6 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def set_params
-    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id)
+    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo)
   end
 end

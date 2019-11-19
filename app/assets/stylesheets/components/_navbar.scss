@@ -1,12 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 150px;
+  clip-path: polygon(100% 0, 100% 48%, 67% 79%, 28% 47%, 0 75%, 0 0);
+  background-color: $light-gray;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding-bottom: 5%;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  padding-bottom: 5%;
 }

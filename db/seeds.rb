@@ -94,7 +94,8 @@ country = {
     weather: 'Outdoor',
     category: type_of_item.sample,
     rating: rating.sample,
-    price: rand(0..20)
+    price: rand(0..20),
+    remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
 })
 end
 
@@ -112,7 +113,8 @@ end
     weather: 'Indoor',
     category: type_of_item.sample,
     rating: rating.sample,
-    price: rand(0..20)
+    price: rand(0..20),
+    remote_photo_url: "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/italy-1200x815.jpg"
 })
 end
 
@@ -130,7 +132,8 @@ end
     weather: 'Outdoor',
     category: type_of_item.sample,
     rating: rating.sample,
-    price: rand(0..20)
+    price: rand(0..20),
+    remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/C%C3%B3rdoba_%28Spain%29_at_night.jpg"
 })
 end
 
@@ -148,7 +151,8 @@ end
     weather: 'Indoor',
     category: type_of_item.sample,
     rating: rating.sample,
-    price: rand(0..20)
+    price: rand(0..20),
+    remote_photo_url: "https://mk0travelawayrru2xew.kinstacdn.com/wp-content/uploads/2013/04/berlin-cathedral.jpg"
 })
 end
 
