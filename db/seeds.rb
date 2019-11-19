@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Item.destroy_all if Rails.env.development?
+Trip.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
+
+
 require 'faker'
 
 outdoor_day_items = ['hiking a mountain', 'snorkeling', 'city tour', 'arts festival', 'street food', 'beach', 'boarding', 'famous monuments', 'shopping plaza', 'onsen']
@@ -20,20 +26,70 @@ type_of_item = ['sport', 'food', 'music', 'museum', 'relax and rejuvinate', 'sho
 
 rating = [1,2,3,4,5]
 
-addresses = [
+country = {
+  Japan: {city: ['Osaka', 'Tokyo', 'Nagano', 'Fukuoka', 'Hiroshima', 'Okinawa'],
+          address: ['Sapporo-shi, Teine-ku, Akebono-11-jō, 2-chōme-3-ban-12-gō',
+                    'Haneya 4-1-A-kumi, Ōita-shi, Ōita-ken',
+                    'Wakuramachi yo 80, Nanao-shi, Ishikawa-ken 926-0192',
+                    'Higashi Oyima 34, Tameiko, Taito-ken',
+                    'Yamaguchi 34, Akebane, Kita'
+          ]
+        },
+  Italy: {city: ['Rome', 'Venice', 'Milan', 'Turin', 'Naples', 'Florence'],
+          address: ['Via Sergente Maggiore 43',
+                    'Via Miochio 100',
+                    'Via Pompeo Litta, 5',
+                    'Via Coglio Litta, 78',
+                    'Via Pigletto, 111'
+          ]
+        },
+  Spain: {city: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia', 'Cordoba', 'Toledo'],
+          address: ['Calle Las Rosas, 124',
+                    'Avenida De La Fuente 22',
+                    'Calle Del Beso 11',
+                    'Calle Cantores 44',
+                    'Avenida La Fresa 567'
+          ]
+        },
+  Germany: {city: ['Berlin', 'Munich', 'Hamburg', 'Stuttgart', 'Dortmund', 'Bremen'],
+          address: ['Schulstrasse 4',
+                    'Grüner Weg 6',
+                    'Holstenwall 11',
+                    'Ansgarstr. 4, Wallenhorst, 49134',
+                    'Südweg 3, Glandorf, 49219'
+          ]
+        },
+  Cuba: {city: ['La Habana', 'Varadero', 'Santa Clara', 'Varadero', 'Cienfuegos'],
+          address: ['Calle del Mar 23',
+                    'Avenida de la Revolucion 1900',
+                    'Calle del Cangrejo 1',
+                    'Calle del Puro',
+                    'Avenida de la Defensa 111'
+          ]
+        }
+}
 
-]
 
 #OUTDOOR DAY
 
+# p country[:Japan][:city].sample
+
+  user = User.new
+  user.email = 'test@example.com'
+  user.password = 'valid_password'
+  user.password_confirmation = 'valid_password'
+  user.save!
+
+
+
 25.times do
-  country = Faker::Address.country
   Item.create! ({
+    user: User.last,
     title: outdoor_day_items.sample,
     url: 'www.eventbrite.com',
-    country: "#{}",
-    city: "#{}",
-    address: "#{}",
+    country: "Japan",
+    city: country[:Japan][:city].sample,
+    address: country[:Japan][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -46,12 +102,12 @@ end
 
 25.times do
   Item.create! ({
+    user: User.last,
     title: indoor_day_items.sample,
     url: 'www.eventbrite.com',
-    country: "#{}",
-    city: "#{}",
-    address: "#{}",
-    address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012#",
+    country: "Italy",
+    city: country[:Italy][:city].sample,
+    address: country[:Italy][:address].sample,
     time_of_day: 'Nighttime',
     weather: 'Indoor',
     category: type_of_item.sample,
@@ -64,12 +120,12 @@ end
 
 25.times do
   Item.create! ({
+    user: User.last,
     title: outdoor_night_items.sample,
     url: 'www.eventbrite.com',
-    country: "#{}",
-    city: "#{}",
-    address: "#{}",
-    address: "Country: #{item.country}, City: #{item.city}, Street: Sesame, ZIP: 10012#",
+    country: "Spain",
+    city: country[:Spain][:city].sample,
+    address: country[:Spain][:address].sample,
     time_of_day: 'Nighttime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -82,11 +138,12 @@ end
 
 25.times do
   Item.create! ({
+    user: User.last,
     title: indoor_night_items.sample,
     url: 'www.eventbrite.com',
-    country: "#{}",
-    city: "#{}",
-    address: "#{}",
+    country: "Germany",
+    city: country[:Germany][:city].sample,
+    address: country[:Germany][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Indoor',
     category: type_of_item.sample,
@@ -98,14 +155,18 @@ end
 
 trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip', 'Adventure Time', 'Our first big trip together!']
 
-15.times do
-  Trip.create! ({
-    name: trip_name.sample,
-    start_date: Faker::Date.forward,
-    end_date: trip.start_date + rand(7..15).days
-  })
-end
 
+15.times do
+  start_date_value = Faker::Date.forward
+  trip = Trip.new ({
+    user: User.last,
+    name: trip_name.sample,
+    start_date: start_date_value,
+    end_date: start_date_value + rand(7..15).days
+  })
+  trip.save!
+end
+ puts "CReation of seed successful!!!"
 
 
 
