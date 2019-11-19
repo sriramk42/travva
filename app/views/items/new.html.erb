@@ -10,23 +10,18 @@
             <%= f.input :weather %>
             <%= f.input :category %>
             <%= f.input :price %>
+            <%= f.input :country%>
             <%= f.input :city %>
             <%= f.input :rating %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
             <%= f.button :submit, class: "turquoise-button"%>
           <% end %>
       </div>
   </div>
 
-
-
-
 <div class="container text-center">
   <h1>Buttons</h1>
   <%= link_to "Main button", new_user_session_path, class: "turquoise-button" %>
   <%= link_to "Dark gray button", new_user_registration_path, class: "dark-gray-button" %>
-</div>
-
-
-
-
 </div>
