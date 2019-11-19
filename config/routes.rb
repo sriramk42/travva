@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :trips, only: [:index, :show, :new, :create] do
-    resources :trip_items, only: [:new, :create]
+  resources :trips do
+    resources :trip_items, only: [:create, :destroy]
   end
 
-  resources :items, only: [:index, :show, :new, :create] do
-    resources :trip_items, only: [:new, :create]
+  resources :items do
+    resources :trip_items, only: [:create, :destroy]
   end
 end
