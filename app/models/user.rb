@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :items, dependent: :destroy
+  has_many :trips, dependent: :destroy
+  has_many :trip_items, through: :items
+  has_many :trip_items, through: :trips #is this correct? needs to be verified
 end
