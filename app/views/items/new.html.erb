@@ -1,0 +1,32 @@
+<div class="container mt-3 p-5">
+  <h1 class="text-center mb-3">Add a New Item</h1>
+  <div class="row mt-3 justify-content-center pt-3">
+      <div class="col-6">
+          <%= simple_form_for (@item) do |f| %>
+            <%= f.input :title %>
+            <%= f.input :url %>
+            <%= f.input :address %>
+            <%= f.input :time_of_day %>
+            <%= f.input :weather %>
+            <%= f.input :category %>
+            <%= f.input :price %>
+            <%= f.input :city %>
+            <%= f.input :rating %>
+            <%= f.button :submit, class: "turquoise-button"%>
+          <% end %>
+      </div>
+  </div>
+
+
+
+
+<div class="container text-center">
+  <h1>Buttons</h1>
+  <%= link_to "Main button", new_user_session_path, class: "turquoise-button" %>
+  <%= link_to "Dark gray button", new_user_registration_path, class: "dark-gray-button" %>
+</div>
+
+
+
+
+</div>
