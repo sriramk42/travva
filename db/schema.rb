@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_091210) do
+ActiveRecord::Schema.define(version: 2019_11_18_094442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "address"
+    t.string "time_of_day"
+    t.string "weather"
+    t.string "category"
+    t.float "price"
+    t.string "country"
+    t.string "city"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "trip_items", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "item_id"
+    t.datetime "date"
+    t.integer "order"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trip_items_on_item_id"
+    t.index ["trip_id"], name: "index_trip_items_on_trip_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.string "destination"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +67,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_091210) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users"
+  add_foreign_key "trip_items", "items"
+  add_foreign_key "trip_items", "trips"
+  add_foreign_key "trips", "users"
 end
