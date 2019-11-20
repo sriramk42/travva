@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
-
+    @items = Item.geocoded
     @search = {model_name: "search"}
     if params[:search].present? 
       @search = @search.merge(search_params.to_h)
@@ -16,6 +15,15 @@ class ItemsController < ApplicationController
       end     
     end 
     @search = OpenStruct.new(@search)
+
+    
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude
+
+      }
+    end
   end
 
   def show

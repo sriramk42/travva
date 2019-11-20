@@ -1,0 +1,26 @@
+.card-itinerary {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 370px;
+}
+
+.card-itinerary img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-itinerary h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $dark-gray;
+}
+
+.card-itinerary .card-itinerary-infos {
+  padding: 16px;
+}
