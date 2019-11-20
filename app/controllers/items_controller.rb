@@ -4,19 +4,19 @@ class ItemsController < ApplicationController
   def index
     @items = Item.geocoded
     @search = {model_name: "search"}
-    if params[:search].present? 
+    if params[:search].present?
       @search = @search.merge(search_params.to_h)
 
       if params[:search][:category].uniq.reject(&:blank?).present?
         @items = @items.where(category: params[:search][:category])
       end
       if params[:search][:country].uniq.reject(&:blank?).present?
-        @items = @items.where(country: params[:search][:country]) 
-      end     
-    end 
+        @items = @items.where(country: params[:search][:country])
+      end
+    end
     @search = OpenStruct.new(@search)
 
-    
+
     @markers = @items.map do |item|
       {
         lat: item.latitude,
