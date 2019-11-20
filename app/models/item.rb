@@ -10,5 +10,5 @@ class Item < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   CATEGORY = Item.select(:category).map(&:category).uniq.reject(&:blank?)
-  COUNTRY = Item.select(:category).map(&:category).uniq.reject(&:blank?)
+  COUNTRY = Item.select(:country).map(&:country).uniq.reject(&:blank?)
 end
