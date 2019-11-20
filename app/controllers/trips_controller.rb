@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
   def index
     @trips = policy_scope(Trip).order(created_at: :desc)
-    @trip = Trip.all
+    @trips = Trip.all
   end
 
   def show
