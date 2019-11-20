@@ -3,6 +3,19 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+
+    @search = {model_name: "search"}
+    if params[:search].present? 
+      @search = @search.merge(search_params.to_h)
+
+      if params[:search][:category].uniq.reject(&:blank?).present?
+        @items = @items.where(category: params[:search][:category])
+      end
+      if params[:search][:country].uniq.reject(&:blank?).present?
+        @items = @items.where(country: params[:search][:country]) 
+      end     
+    end 
+    @search = OpenStruct.new(@search)
   end
 
   def show
@@ -36,7 +49,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def set_params
+  def item_params
     params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo)
+  end
+
+  def search_params
+    params.require(:search).permit(country:[], category:[])
   end
 end

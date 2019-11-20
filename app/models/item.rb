@@ -8,5 +8,5 @@ class Item < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   CATEGORY = Item.select(:category).map(&:category).uniq.reject(&:blank?)
-  COUNTRY = Item.select(:category).map(&:category).uniq.reject(&:blank?)
+  COUNTRY = Item.select(:country).map(&:country).uniq.reject(&:blank?)
 end
