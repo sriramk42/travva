@@ -35,8 +35,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     authorize @item
+    @item.user = current_user
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to items_path
     else
       render :new
     end
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo)
+    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache)
   end
 
   def search_params
