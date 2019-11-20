@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
+    @items = policy_scope(Item).order(created_at: :desc)
     @items = Item.geocoded
     @search = {model_name: "search"}
     if params[:search].present?
@@ -16,12 +17,10 @@ class ItemsController < ApplicationController
     end
     @search = OpenStruct.new(@search)
 
-
     @markers = @items.map do |item|
       {
         lat: item.latitude,
         lng: item.longitude
-
       }
     end
   end
@@ -31,12 +30,15 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
     @item = Item.new(item_params)
+    authorize @item
+    @item.user = current_user
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to items_path
     else
       render :new
     end
@@ -55,10 +57,11 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def item_params
-    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo)
+    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache)
   end
 
   def search_params

@@ -1,8 +1,9 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trip = Trip.all
+    @trips = policy_scope(Trip).order(created_at: :desc)
+    @trips = Trip.all
   end
 
   def show
@@ -10,10 +11,12 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    authorize @trip
   end
 
   def create
     @trip = Trip.new(trip_params)
+    authorize @trip
     if @trip.save
       redirect_to trip_path(@trip)
     else
@@ -34,6 +37,7 @@ class TripsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:id])
+    authorize @trip
   end
 
   def set_params
