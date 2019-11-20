@@ -170,7 +170,7 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   })
   trip.save!
 end
- puts "CReation of seed successful!!!"
+ puts "Seed successfully created!!!"
 
 
 
