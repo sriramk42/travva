@@ -1,3 +1,39 @@
 
 
 // polygon(100% 0, 100% 54%, 70% 71%, 32% 49%, 0 65%, 0 0);
+
+.body-home {
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/b7982f82757349.5d27223e252a9.jpg');
+  display: cover;
+  width: 100vw;
+  background-size: cover;
+  background-position-y: 5%;
+  background-attachment: scroll;
+}
+
+.uphill img {
+  image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/12ecfd82757349.5d27223e250b4.jpg')
+}
+
+
+.downhill img {
+  image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/32695182757349.5d27223e245ed.jpg')
+}
+
+.intro-card {
+  opacity: .7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+
+.intro-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 0px !important;
+  margin: 0px !important;
+}

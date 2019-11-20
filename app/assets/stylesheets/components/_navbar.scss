@@ -3,15 +3,18 @@
   background: white;
   height: 150px;
   clip-path: polygon(100% 0, 100% 48%, 67% 79%, 28% 47%, 0 75%, 0 0);
-  background-color: $gray;
+  background-color: $light-gray;
+  opacity: .5;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  padding-bottom: 5%;
+  padding-bottom: 2.5rem !important;
+  padding-top: 0rem !important;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-  padding-bottom: 5%;
+  width: 100px;
+  padding-bottom: 2.5rem !important;
+  padding-top: 0rem !important;
 }
