@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
     @markers = @items.map do |item|
       {
         lat: item.latitude,
-        lng: item.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        lng: item.longitude
+
       }
     end
   end
