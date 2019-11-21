@@ -1,8 +1,15 @@
 
+.big-container {
+  align-items: center;
+  margin-left: 100px;
+}
+
 .items-container {
   overflow: scroll;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 30px;
   margin-right: 100px;
   height: 100vh;
+  border-radius: 4px;
+  flex: 3;
 }

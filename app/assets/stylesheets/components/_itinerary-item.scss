@@ -43,8 +43,8 @@
   width: 100%;
   background-size: cover;
   height: 200px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .card-body {
@@ -52,9 +52,9 @@
 }
 
 .card-index {
-  border: solid 1px $cream;
+  border: solid 8px $cream;
   background-color: $cream;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .card-index .card-body-item {

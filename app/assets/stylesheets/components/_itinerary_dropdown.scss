@@ -1,0 +1,26 @@
+.dropdown-style {
+  border: solid 20px $cream;
+  background-color: $cream;
+  border-radius: 4px;
+  font-size: 13px;
+  color: $brown;
+  max-height: 70vh;
+  flex: 1;
+  }
+
+.col-form-label {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.form-check-input {
+  opacity: .2;
+  }
+
+.form-check-input:hover {
+  opacity: 1;
+}
+
+.check_boxes {
+  color: $brown;
+}

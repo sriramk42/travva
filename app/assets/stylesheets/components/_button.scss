@@ -1,8 +1,9 @@
-.turquoise-button {
+.light-button {
   color: $brown;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
+  font-size: 14px;
   background: $cream;
   transition: background 0.1s ease;
   border: 1px solid $cream;
@@ -15,18 +16,21 @@
   }
 }
 
-.dark-gray-button {
-  color: $turquoise;
+
+.dark-button {
+  color: $cream;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: $dark-gray;
-  transition: background 0.3s ease;
-  border: 1px solid $dark-gray;
+  font-size: 14px;
+  background: $brown;
+  transition: background 0.1s ease;
+  border: 1px solid $brown;
 
    &:hover{
-    background: $turquoise;
-    color: $light-gray;
+    background: $cream;
+    color: $brown;
+    border-color: $cream;
     text-decoration: none;
   }
 }
