@@ -92,6 +92,11 @@
   color: $yellow;
 }
 
+.card-index {
+  &:hover{
+    cursor: pointer;
+  }
+}
 
 
 
