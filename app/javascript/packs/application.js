@@ -13,6 +13,9 @@ import { home } from "../home/home";
 
 import { initSweetalert } from "../plugins/init_sweetalert";
 
+
+import 'plugins/flatpickr'
+
 // initSweetalert('#sweet-alert-demo', {
 //   title: "Nice!",
 //   text: "Item successfully created",
@@ -23,3 +26,4 @@ import { initSweetalert } from "../plugins/init_sweetalert";
 //     link.click();
 //   }
 // });
+
