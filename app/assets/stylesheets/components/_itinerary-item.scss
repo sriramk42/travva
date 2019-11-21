@@ -80,6 +80,11 @@
   color: $turquoise;
 }
 
+.card-index {
+  &:hover{
+    cursor: pointer;
+  }
+}
 
 
 
