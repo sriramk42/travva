@@ -18,8 +18,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    raise
-    @trip.remote_photo_url = "https://source.unsplash.com/?#{@trip.name}"
+    # raise
+    # @trip.remote_photo_url = "https://source.unsplash.com/?#{@trip.name}"
     authorize @trip
     @trip.user = current_user
     if @trip.save
