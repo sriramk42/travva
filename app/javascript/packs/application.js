@@ -23,3 +23,5 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   }
 });
+
+import 'plugins/flatpickr'
