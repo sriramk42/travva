@@ -1,21 +1,22 @@
 <center><h2>Trips</h2></center>
 
-<div id="tabs" class="items-container">
+<div id="tabs" class="trips-container">
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a  href="#1" data-toggle="tab" class="light-button">Current trips</a></li>
+      <li><a href="#2" data-toggle="tab" class="light-button">Upcoming trips</a></li>
+      <li><a href="#3" data-toggle="tab" class="light-button">Past trips</a></li>
+    </ul>
+  </div>
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a  href="#1" data-toggle="tab" class="light-button">Current trips</a></li>
-    <li><a href="#2" data-toggle="tab" class="light-button">Upcoming trips</a></li>
-    <li><a href="#3" data-toggle="tab" class="light-button">Past trips</a></li>
-  </ul>
-
-  <div class="tab-content d-flex">
+  <div class="tab-content trips-time-container">
     <div class="tab-pane active" id="1">
       <% if @current_trips.any? %>
         <% @current_trips.each do |trip| %>
           <%= render 'trip', trip: trip %>
         <% end %>
       <% else %>
-        <center><h2>You're not on a trip right now! Plan one ;)</h2></center>
+          <center><h2 class="card trip-card">You're not on a trip right now! Plan one ;)</h2></center>
       <% end %>
     </div>
     <div class="tab-pane" id="2">

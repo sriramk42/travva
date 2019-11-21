@@ -52,7 +52,7 @@
 }
 
 .card-index {
-  border: solid 8px $cream;
+  border: solid 30px $cream;
   background-color: $cream;
   border-radius: 4px;
 }
@@ -68,7 +68,6 @@
 }
 
 .card-left {
-  padding-left: 24px;
   text-align: left;
   font-weight: bold;
   font-size: 18px;
@@ -81,15 +80,16 @@
   font-size: 12px;
   font-style: italic;
   color: $brown;
-  padding-right: 24px;
 }
 
 .fas {
-  color: $yellow;
+  color: $orange;
+  font-size: 12px;
 }
 
 .far {
-  color: $yellow;
+  color: $orange;
+  font-size: 12px;
 }
 
 .card-index {

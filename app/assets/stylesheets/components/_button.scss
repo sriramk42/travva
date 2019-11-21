@@ -21,6 +21,7 @@
   color: $cream;
   padding: 8px 24px;
   border-radius: 4px;
+  margin-top: 8px;
   font-weight: bold;
   font-size: 14px;
   background: $brown;
@@ -30,7 +31,7 @@
    &:hover{
     background: $cream;
     color: $brown;
-    border-color: $cream;
+    border-color: $brown;
     text-decoration: none;
   }
 }
