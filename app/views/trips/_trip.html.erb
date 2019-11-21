@@ -1,0 +1,7 @@
+<div class="card text-white p-3 " style="width: 100vw; height: 150px">
+  <%= cl_image_tag trip.photo, style: 'width: 100%', crop: :fill %>
+  <div class="card-img-overlay">
+    <center><h1><%= trip.name%></h1></center>
+    <center><h1><%= trip.start_date%></h1></center>
+  </div>
+</div>

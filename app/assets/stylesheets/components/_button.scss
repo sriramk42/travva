@@ -1,15 +1,16 @@
 .turquoise-button {
-  color: $light-gray;
+  color: $brown;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: $turquoise;
-  transition: background 0.3s ease;
-  border: 1px solid $turquoise;
+  background: $cream;
+  transition: background 0.1s ease;
+  border: 1px solid $cream;
 
    &:hover{
-    background: $dark-gray;
-    color: $turquoise;
+    background: $brown;
+    color: $cream;
+    border-color: $brown;
     text-decoration: none;
   }
 }

@@ -43,11 +43,18 @@
   width: 100%;
   background-size: cover;
   height: 200px;
-  width: 300px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .card-body {
   padding: 0px;
+}
+
+.card-index {
+  border: solid 1px $cream;
+  background-color: $cream;
+  border-radius: 8px;
 }
 
 .card-index .card-body-item {
@@ -61,23 +68,28 @@
 }
 
 .card-left {
-  padding-left: 2px;
+  padding-left: 24px;
   text-align: left;
-}
-
-
-.card-right .card-item-category{
-  text-align: right;
-}
-
-.card-left p {
   font-weight: bold;
   font-size: 18px;
-  color: $dark-gray;
+  color: $brown;
 }
 
-.card-right p {
-  color: $turquoise;
+.card-right {
+  text-align: right;
+  color: $brown;
+  font-size: 12px;
+  font-style: italic;
+  color: $brown;
+  padding-right: 24px;
+}
+
+.fas {
+  color: $yellow;
+}
+
+.far {
+  color: $yellow;
 }
 
 

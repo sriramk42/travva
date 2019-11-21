@@ -3,7 +3,9 @@ class TripsController < ApplicationController
 
   def index
     @trips = policy_scope(Trip).order(created_at: :desc)
-    @trips = Trip.all
+    @past_trips = @trips.past
+    @future_trips = @trips.future
+    @current_trips = @trips.current
   end
 
   def show

@@ -1,60 +1,45 @@
-<div class="container"><center><h2>Trips</h2></center></div>
+<center><h2>Trips</h2></center>
 
-  <div id="tabs" class="container">
+<div id="tabs" class="items-container">
+
   <ul class="nav nav-tabs">
-        <li class="active">
-         <a  href="#1" data-toggle="tab" class="turquoise-button">Current trips</a>
-        </li>
-        <li><a href="#2" data-toggle="tab" class="turquoise-button">Upcoming trips</a>
-        </li>
-        <li><a href="#3" data-toggle="tab" class="turquoise-button">Past trips</a>
-        </li>
+    <li class="active"><a  href="#1" data-toggle="tab" class="turquoise-button">Current trips</a></li>
+    <li><a href="#2" data-toggle="tab" class="turquoise-button">Upcoming trips</a></li>
+    <li><a href="#3" data-toggle="tab" class="turquoise-button">Past trips</a></li>
   </ul>
-        <div class="tab-content d-flex">
-          <div class="tab-pane active" id="1">
-            <% @trips.each do |trip| %>
-            <!-- <h3>LIST OF CURRENT TRIPS</h3> -->
-              <% if Date.today.between?(trip.start_date,trip.end_date) %>
-                <div class="card text-white p-3 " style="width: 1200px; height: 300px">
-                  <img src="https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/italy-1200x815.jpg" class="card-img" alt="..."height="265px">
-                  <div class="card-img-overlay">
-                    <center><h1><%= trip.name%></h1></center>
-                    <center><h1><%= trip.start_date%></h1></center>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="tab-pane" id="2">
-            <% @trips.each do |trip| %>
-            <!-- <h3>LIST OF UPCOMING TRIPS</h3> -->
-              <% if trip.start_date.to_datetime.future? %>
-                <div class="card text-white p-3" style="width: 1200px; height: 300px">
-                  <img src="https://mk0travelawayrru2xew.kinstacdn.com/wp-content/uploads/2013/04/berlin-cathedral.jpg" class="card-img" alt="..."height="265px">
-                  <div class="card-img-overlay">
-                   <center> <h1><%= trip.name%></h1></center>
-                   <center><h1><%= trip.start_date%></h1></center>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="tab-pane" id="3">
-            <% @trips.each do |trip| %>
-            <!-- <h3>LIST OF PAST TRIPS</h3> -->
-              <% if trip.end_date.to_datetime.past? %>
-                <div class="card text-white p-3" style="width: 1200px; height: 300px">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/C%C3%B3rdoba_%28Spain%29_at_night.jpg" class="card-img" alt="..." height="265px">
-                  <div class="card-img-overlay">
-                    <center><h1><%= trip.name%></h1></center>
-                    <center><h1><%= trip.start_date%></h1></center>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+
+  <div class="tab-content d-flex">
+    <div class="tab-pane active" id="1">
+      <% if @current_trips.any? %>
+        <% @current_trips.each do |trip| %>
+          <%= render 'trip', trip: trip %>
+        <% end %>
+      <% else %>
+        <center><h2>You're not on a trip right now! Plan one ;)</h2></center>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="2">
+      <% if @future_trips.any? %>
+        <% @future_trips.each do |trip| %>
+          <%= render 'trip', trip: trip %>
+        <% end %>
+      <% else %>
+        <center><h2>You don't have any upcoming trips! Plan one ;)</h2></center>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="3">
+      <% if @past_trips.any? %>
+        <% @past_trips.each do |trip| %>
+          <%= render 'trip', trip: trip %>
+        <% end %>
+      <% else %>
+        <center><h2>You don't have any past trips! Plan one ;)</h2></center>
+      <% end %>
+    </div>
+  </div>
 </div>
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
