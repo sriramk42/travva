@@ -1,10 +1,9 @@
-<div class="body-background">
-  <% if params[:controller] == 'pages' && params[:action] == 'home' %>
-    <%= image_tag("bike.jpg") %>
-  <% elsif params[:controller] == 'items' && params[:action] == 'index' %>
-    <%= image_tag("sunbathing.jpg") %>
-  <% elsif params[:controller] == 'trips' && params[:action] == 'index' %>
-    <%= image_tag("dancing.jpg") %>
-  <% else %>
-    <%= image_tag("tattoo.jpg") %>
+<% if params[:controller] == 'pages' && params[:action] == 'home' %>
+  <div class="body-background" style="background-image: url(<%= image_path 'bike.jpg' %>)">
+<% elsif params[:controller] == 'items' && params[:action] == 'index' %>
+  <div class="body-background" style="background-image: url(<%= image_path 'sunbathing.jpg' %>)">
+<% elsif params[:controller] == 'trips' && params[:action] == 'index' %>
+  <div class="body-background" style="background-image: url(<%= image_path 'dancing.jpg' %>)">
+<% else %>
+  <div class="body-background" style="background-image: url(<%= image_path 'tattoo.jpg' %>)">
 <% end %>
