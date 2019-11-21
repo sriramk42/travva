@@ -1,7 +1,7 @@
 <div class="items-container">
   <div class="row">
     <div class="col-2">
-      <!-- For Category Filter -->
+      <!-- For Category and Country Filter -->
       <%= simple_form_for :search, object: @search, url: items_path, method:
       "GET" do |f| %>
         <% p @search %> <%= f.input :country, label: "Country",
