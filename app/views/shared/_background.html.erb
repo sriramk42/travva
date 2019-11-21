@@ -1,11 +1,10 @@
-<% if params[:controller] == 'pages' && params[:action] == 'home' %>
-  <div class="body-home body-background">
-<% elsif params[:controller] == 'items' && params[:action] == 'index' %>
-  <div class="body-items body-background">
-<% elsif params[:controller] == 'trips' && params[:action] == 'index' %>
-  <div class="body-user-login body-background">
-<% elsif params[:controller] == 'trips' && params[:action] == 'show' %>
-  <div class="body-itinerary body-background">
-<% else %>
-  <div class="body-else body-background">
+<div class="body-background">
+  <% if params[:controller] == 'pages' && params[:action] == 'home' %>
+    <%= image_tag("bike.jpg") %>
+  <% elsif params[:controller] == 'items' && params[:action] == 'index' %>
+    <%= image_tag("sunbathing.jpg") %>
+  <% elsif params[:controller] == 'trips' && params[:action] == 'index' %>
+    <%= image_tag("dancing.jpg") %>
+  <% else %>
+    <%= image_tag("tattoo.jpg") %>
 <% end %>
