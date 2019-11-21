@@ -22,7 +22,7 @@ indoor_day_items = ['museum of modern art', 'history museum', 'shopping mall', '
 
 indoor_night_items = ['concert', 'fancy dinner', 'famous bar']
 
-type_of_item = ['sport', 'food', 'music', 'museum', 'relax and rejuvenate', 'shopping', 'culture', 'religion', 'history', 'nightlife', 'romance']
+type_of_item = ['Sport', 'Food', 'Music', 'Museum', 'Relax and Rejuvenate', 'Shopping', 'Culture', 'Religion', 'History', 'Nightlife', 'Romance']
 
 rating = [1,2,3,4,5]
 
@@ -170,6 +170,79 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   })
   trip.save!
 end
+
+
+  Item.create! ({
+    user: User.last,
+    title: "Item 1 for testing",
+    url: 'www.eventbrite.com',
+    country: "Spain",
+    city: country[:Spain][:city].sample,
+    address: country[:Spain][:address].sample,
+    time_of_day: 'Daytime',
+    weather: 'Outdoor',
+    category: type_of_item.sample,
+    rating: 5,
+    price: 5,
+    remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
+})
+
+  Item.create! ({
+    user: User.last,
+    title: "Item 2 for testing",
+    url: 'www.eventbrite.com',
+    country: "Spain",
+    city: country[:Spain][:city].sample,
+    address: country[:Spain][:address].sample,
+    time_of_day: 'Daytime',
+    weather: 'Outdoor',
+    category: type_of_item.sample,
+    rating: 5,
+    price: 4,
+    remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
+})
+
+  Item.create! ({
+    user: User.last,
+    title: "Item 3 for testing",
+    url: 'www.eventbrite.com',
+    country: "Spain",
+    city: country[:Spain][:city].sample,
+    address: country[:Spain][:address].sample,
+    time_of_day: 'Daytime',
+    weather: 'Outdoor',
+    category: type_of_item.sample,
+    rating: 5,
+    price: 3,
+    remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
+})
+
+  Trip.create!({
+
+  user: User.last,
+  name: "Test1 Trip",
+  start_date:Date.today,
+  end_date:Date.today  + rand(7..15).days
+
+})
+
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id
+})
+
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id - 1
+})
+
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id - 2
+})
+
+
+
  puts "Seed successfully created!!!"
 
 

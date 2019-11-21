@@ -11,17 +11,19 @@ initMapbox();
 
 import { home } from "../home/home";
 
-import { initSweetalert } from '../plugins/init_sweetalert';
+import { initSweetalert } from "../plugins/init_sweetalert";
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Nice!",
-  text: "Item successfully created",
-  icon: "success"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#submit-link');
-    link.click();
-  }
-});
 
 import 'plugins/flatpickr'
+
+// initSweetalert('#sweet-alert-demo', {
+//   title: "Nice!",
+//   text: "Item successfully created",
+//   icon: "success"
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelector('#submit-link');
+//     link.click();
+//   }
+// });
+
