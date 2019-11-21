@@ -17,11 +17,9 @@
 .body-else {
   background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/54ef2f74848179.5c3c805f5f639.jpg');
 }
+
 .body-background {
-  display: cover;
-  width: 100vw;
   background-size: cover;
-  background-position-y: 5%;
   background-attachment: scroll;
   min-height: 100vh;
 }
