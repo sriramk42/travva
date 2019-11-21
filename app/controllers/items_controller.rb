@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = policy_scope(Item).order(created_at: :desc)
-    @items = Item.geocoded
+    # @items = Item.geocoded    
     @search = {model_name: "search"}
     if params[:search].present?
       @search = @search.merge(search_params.to_h)
@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     authorize @item
+    # @countries = ISO3166::Country.all.map { |country| country.name }.sort
   end
 
   def create

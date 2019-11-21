@@ -22,7 +22,7 @@ indoor_day_items = ['museum of modern art', 'history museum', 'shopping mall', '
 
 indoor_night_items = ['concert', 'fancy dinner', 'famous bar']
 
-type_of_item = ['sport', 'food', 'music', 'museum', 'relax and rejuvenate', 'shopping', 'culture', 'religion', 'history', 'nightlife', 'romance']
+type_of_item = ['Sport', 'Food', 'Music', 'Museum', 'Relax and Rejuvenate', 'Shopping', 'Culture', 'Religion', 'History', 'Nightlife', 'Romance']
 
 rating = [1,2,3,4,5]
 
