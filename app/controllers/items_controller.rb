@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
       end
     end
     @search = OpenStruct.new(@search)
+
     @markers = @items.map do |item|
       {
         lat: item.latitude,
