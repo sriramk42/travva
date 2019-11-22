@@ -102,60 +102,60 @@ end
 
 #INDOOR DAY
 
-25.times do
-  Item.create! ({
-    user: User.last,
-    title: indoor_day_items.sample,
-    url: 'www.eventbrite.com',
-    country: "IT",
-    city: country[:IT][:city].sample,
-    address: country[:IT][:address].sample,
-    time_of_day: 'Nighttime',
-    weather: 'Indoor',
-    category: type_of_item.sample,
-    rating: rating.sample,
-    price: rand(0..20),
-    remote_photo_url: "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/italy-1200x815.jpg"
-})
-end
+# 25.times do
+#   Item.create! ({
+#     user: User.last,
+#     title: indoor_day_items.sample,
+#     url: 'www.eventbrite.com',
+#     country: "IT",
+#     city: country[:IT][:city].sample,
+#     address: country[:IT][:address].sample,
+#     time_of_day: 'Nighttime',
+#     weather: 'Indoor',
+#     category: type_of_item.sample,
+#     rating: rating.sample,
+#     price: rand(0..20),
+#     remote_photo_url: "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/italy-1200x815.jpg"
+# })
+# end
 
-#OUTDOOR NIGHT
+# #OUTDOOR NIGHT
 
-25.times do
-  Item.create! ({
-    user: User.last,
-    title: outdoor_night_items.sample,
-    url: 'www.eventbrite.com',
-    country: "ES",
-    city: country[:ES][:city].sample,
-    address: country[:ES][:address].sample,
-    time_of_day: 'Nighttime',
-    weather: 'Outdoor',
-    category: type_of_item.sample,
-    rating: rating.sample,
-    price: rand(0..20),
-    remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/C%C3%B3rdoba_%28Spain%29_at_night.jpg"
-})
-end
+# 25.times do
+#   Item.create! ({
+#     user: User.last,
+#     title: outdoor_night_items.sample,
+#     url: 'www.eventbrite.com',
+#     country: "ES",
+#     city: country[:ES][:city].sample,
+#     address: country[:ES][:address].sample,
+#     time_of_day: 'Nighttime',
+#     weather: 'Outdoor',
+#     category: type_of_item.sample,
+#     rating: rating.sample,
+#     price: rand(0..20),
+#     remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/C%C3%B3rdoba_%28Spain%29_at_night.jpg"
+# })
+# end
 
-#INDOOR DAY
+# #INDOOR DAY
 
-25.times do
-  Item.create! ({
-    user: User.last,
-    title: indoor_night_items.sample,
-    url: 'www.eventbrite.com',
-    country: "DE",
-    city: country[:DE][:city].sample,
-    address: country[:DE][:address].sample,
-    time_of_day: 'Daytime',
-    weather: 'Indoor',
-    category: type_of_item.sample,
-    rating: rating.sample,
-    price: rand(0..20),
-    remote_photo_url: "https://mk0travelawayrru2xew.kinstacdn.com/wp-content/uploads/2013/04/berlin-cathedral.jpg"
-})
-end
+# 25.times do
+#   Item.create! ({
+#     user: User.last,
+#     title: indoor_night_items.sample,
+#     url: 'www.eventbrite.com',
+#     country: "DE",
+#     city: country[:DE][:city].sample,
+#     address: country[:DE][:address].sample,
+#     time_of_day: 'Daytime',
+#     weather: 'Indoor',
+#     category: type_of_item.sample,
+#     rating: rating.sample,
+#     price: rand(0..20),
+#     remote_photo_url: "https://mk0travelawayrru2xew.kinstacdn.com/wp-content/uploads/2013/04/berlin-cathedral.jpg"
+# })
+# end
 
 
 trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip', 'Adventure Time', 'Our first big trip together!']
