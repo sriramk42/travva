@@ -35,3 +35,60 @@
     text-decoration: none;
   }
 }
+
+.trips-button-red {
+  color: $cream;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  background: $red;
+  transition: background 0.1s ease;
+  border: 1px solid $red;
+
+   &:hover{
+    background: $cream;
+    color: $red;
+    border-color: $red;
+    text-decoration: none;
+  }
+}
+
+.trips-button-blue {
+  color: $blue;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  background: $cream;
+  transition: background 0.1s ease;
+  border: 1px solid $cream;
+
+   &:hover{
+    background: $blue;
+    color: $cream;
+    border-color: $blue;
+    text-decoration: none;
+  }
+}
+
+.trips-button-green {
+  color: $cream;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  background: $green;
+  transition: background 0.1s ease;
+  border: 1px solid $green;
+
+   &:hover{
+    background: $cream;
+    color: $green;
+    border-color: $green;
+    text-decoration: none;
+  }
+}
