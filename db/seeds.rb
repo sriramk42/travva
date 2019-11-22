@@ -165,8 +165,8 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   start_date_value = Faker::Date.forward
   trip = Trip.new ({
     user: User.last,
-    name: trip_name.sample,
     destination: "JP",
+    name: trip_name.sample,
     start_date: start_date_value,
     end_date: start_date_value + rand(7..15).days
   })
