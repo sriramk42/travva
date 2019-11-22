@@ -1,4 +1,4 @@
-<center><h2>Trips</h2></center>
+<center><h2 class="title">Trips</h2></center>
 
 <div id="tabs" class="trips-container">
   <div>
@@ -16,7 +16,7 @@
           <%= render 'trip', trip: trip %>
         <% end %>
       <% else %>
-          <center><h2 class="card trip-card">You're not on a trip right now! Plan one ;)</h2></center>
+          <center><h2 class="trip-card">You're not on a trip right now! Why don't you plan one?</h2></center>
       <% end %>
     </div>
     <div class="<%= panes_classe('future', @target_tab) %>" id="2">
@@ -25,7 +25,7 @@
           <%= render 'trip', trip: trip %>
         <% end %>
       <% else %>
-        <center><h2>You don't have any upcoming trips! Plan one ;)</h2></center>
+        <center><h2 class="trip-card">You don't have any upcoming trips! Feel like planning one?</h2></center>
       <% end %>
     </div>
     <div class="<%= panes_classe('past', @target_tab) %>" id="3">
@@ -34,7 +34,7 @@
           <%= render 'trip', trip: trip %>
         <% end %>
       <% else %>
-        <center><h2>You don't have any past trips! Plan one ;)</h2></center>
+        <center><h2 class="trip-card">We don't have any records of your past trips!</h2></center>
       <% end %>
     </div>
   </div>
