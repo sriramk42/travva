@@ -1,3 +1,24 @@
+.no-trip-card {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $cream;
+  background-clip: border-box;
+  border-radius: 4px;
+  margin-top: 100px;
+  padding: 25px;
+  opacity: .8;
+}
+
+.no-trip-card h2 {
+  opacity: 1px;
+}
+
 .trip-card {
   position: relative;
   display: -webkit-box;
@@ -10,10 +31,38 @@
   background-color: $cream;
   background-clip: border-box;
   border-radius: 4px;
+  margin-top: 10px;
   padding: 25px;
-  opacity: .8;
+  opacity: .9;
 }
 
 .trip-card h2 {
-  opacity: 1px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  color: $cream;
+}
+
+.trip-card p {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  font-style: italic;
+  color: $cream;
+  font-size: 14px;
+}
+
+.trip-card img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
 }
