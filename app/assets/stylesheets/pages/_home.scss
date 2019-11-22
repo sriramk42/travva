@@ -10,7 +10,6 @@
   margin-left: 15vw;
   margin-right: 15vw;
   border-radius: 8px;
-  opacity: .9;
 }
 
 .carousel-container {
@@ -21,12 +20,44 @@
   -webkit-box-pack: center;
   justify-content: center;
   background-size: cover;
-  background-color: $white;
+  background-color: $cream;
   border-radius: 8px;
-  img {
-    object-fit: cover;
-  }
 }
+
+.carousel-item img {
+  height: 75vh;
+  opacity: .3;
+}
+
+.carousel-item h1 {
+  font-size: 80px;
+  color: $brown;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-shadow: 1px 1px 3px $cream;
+}
+
+.carousel-item h2 {
+  font-size: 35px;
+  padding-left: 20px;
+  color: $brown;
+  text-shadow: 3px 3px 3px $cream;
+}
+
+.carousel-item h5 {
+  font-size: 28px;
+  color: $brown;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 3px $cream;
+}
+
+.carousel-item p {
+  font-size: 18px;
+  color: $brown;
+  text-shadow: 3px 3px 3px $cream;
+}
+
 
 .carousel-item {
   border-radius: 8px;
@@ -38,4 +69,18 @@
 
 .downhill img {
   image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/32695182757349.5d27223e245ed.jpg')
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  top: 16%;
+  bottom: none !important;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: $cream !important;
+  opacity: 1;
+  text-align: left !important;
 }
