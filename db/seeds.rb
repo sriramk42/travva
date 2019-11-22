@@ -27,7 +27,7 @@ type_of_item = ['Sport', 'Food', 'Music', 'Museum', 'Relax and Rejuvenate', 'Sho
 rating = [1,2,3,4,5]
 
 country = {
-  Japan: {city: ['Osaka', 'Tokyo', 'Nagano', 'Fukuoka', 'Hiroshima', 'Okinawa'],
+  JP: {city: ['Osaka', 'Tokyo', 'Nagano', 'Fukuoka', 'Hiroshima', 'Okinawa'],
           address: ['Sapporo-shi, Teine-ku, Akebono-11-jō, 2-chōme-3-ban-12-gō',
                     'Haneya 4-1-A-kumi, Ōita-shi, Ōita-ken',
                     'Wakuramachi yo 80, Nanao-shi, Ishikawa-ken 926-0192',
@@ -35,15 +35,16 @@ country = {
                     'Yamaguchi 34, Akebane, Kita'
           ]
         },
-  Italy: {city: ['Rome', 'Venice', 'Milan', 'Turin', 'Naples', 'Florence'],
+  IT: {city: ['Rome', 'Venice', 'Milan', 'Turin', 'Naples', 'Florence'],
           address: ['Via Sergente Maggiore 43',
                     'Via Miochio 100',
                     'Via Pompeo Litta, 5',
                     'Via Coglio Litta, 78',
                     'Via Pigletto, 111'
           ]
+
         },
-  Spain: {city: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia', 'Cordoba', 'Toledo'],
+  ES: {city: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia', 'Cordoba', 'Toledo'],
           address: ['Calle Las Rosas, 124',
                     'Avenida De La Fuente 22',
                     'Calle Del Beso 11',
@@ -51,7 +52,7 @@ country = {
                     'Avenida La Fresa 567'
           ]
         },
-  Germany: {city: ['Berlin', 'Munich', 'Hamburg', 'Stuttgart', 'Dortmund', 'Bremen'],
+  DE: {city: ['Berlin', 'Munich', 'Hamburg', 'Stuttgart', 'Dortmund', 'Bremen'],
           address: ['Schulstrasse 4',
                     'Grüner Weg 6',
                     'Holstenwall 11',
@@ -59,7 +60,7 @@ country = {
                     'Südweg 3, Glandorf, 49219'
           ]
         },
-  Cuba: {city: ['La Habana', 'Varadero', 'Santa Clara', 'Varadero', 'Cienfuegos'],
+  CU: {city: ['La Habana', 'Varadero', 'Santa Clara', 'Varadero', 'Cienfuegos'],
           address: ['Calle del Mar 23',
                     'Avenida de la Revolucion 1900',
                     'Calle del Cangrejo 1',
@@ -72,7 +73,7 @@ country = {
 
 #OUTDOOR DAY
 
-# p country[:Japan][:city].sample
+# p country[:JP][:city].sample
 
   user = User.new
   user.email = 'test@example.com'
@@ -87,9 +88,9 @@ country = {
     user: User.last,
     title: outdoor_day_items.sample,
     url: 'www.eventbrite.com',
-    country: "Japan",
-    city: country[:Japan][:city].sample,
-    address: country[:Japan][:address].sample,
+    country: "JP",
+    city: country[:JP][:city].sample,
+    address: country[:JP][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -106,9 +107,9 @@ end
     user: User.last,
     title: indoor_day_items.sample,
     url: 'www.eventbrite.com',
-    country: "Italy",
-    city: country[:Italy][:city].sample,
-    address: country[:Italy][:address].sample,
+    country: "IT",
+    city: country[:IT][:city].sample,
+    address: country[:IT][:address].sample,
     time_of_day: 'Nighttime',
     weather: 'Indoor',
     category: type_of_item.sample,
@@ -125,9 +126,9 @@ end
     user: User.last,
     title: outdoor_night_items.sample,
     url: 'www.eventbrite.com',
-    country: "Spain",
-    city: country[:Spain][:city].sample,
-    address: country[:Spain][:address].sample,
+    country: "ES",
+    city: country[:ES][:city].sample,
+    address: country[:ES][:address].sample,
     time_of_day: 'Nighttime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -144,9 +145,9 @@ end
     user: User.last,
     title: indoor_night_items.sample,
     url: 'www.eventbrite.com',
-    country: "Germany",
-    city: country[:Germany][:city].sample,
-    address: country[:Germany][:address].sample,
+    country: "DE",
+    city: country[:DE][:city].sample,
+    address: country[:DE][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Indoor',
     category: type_of_item.sample,
@@ -164,7 +165,7 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   start_date_value = Faker::Date.forward
   trip = Trip.new ({
     user: User.last,
-    name: trip_name.sample,
+    name: "JP",
     start_date: start_date_value,
     end_date: start_date_value + rand(7..15).days
   })
@@ -176,9 +177,9 @@ end
     user: User.last,
     title: "Item 1 for testing",
     url: 'www.eventbrite.com',
-    country: "Spain",
-    city: country[:Spain][:city].sample,
-    address: country[:Spain][:address].sample,
+    country: "ES",
+    city: country[:ES][:city].sample,
+    address: country[:ES][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -191,9 +192,9 @@ end
     user: User.last,
     title: "Item 2 for testing",
     url: 'www.eventbrite.com',
-    country: "Spain",
-    city: country[:Spain][:city].sample,
-    address: country[:Spain][:address].sample,
+    country: "ES",
+    city: country[:ES][:city].sample,
+    address: country[:ES][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -206,9 +207,9 @@ end
     user: User.last,
     title: "Item 3 for testing",
     url: 'www.eventbrite.com',
-    country: "Spain",
-    city: country[:Spain][:city].sample,
-    address: country[:Spain][:address].sample,
+    country: "ES",
+    city: country[:ES][:city].sample,
+    address: country[:ES][:address].sample,
     time_of_day: 'Daytime',
     weather: 'Outdoor',
     category: type_of_item.sample,
@@ -220,7 +221,7 @@ end
   Trip.create!({
 
   user: User.last,
-  name: "Test1 Trip",
+  name: "ES",
   start_date:Date.today,
   end_date:Date.today  + rand(7..15).days
 
