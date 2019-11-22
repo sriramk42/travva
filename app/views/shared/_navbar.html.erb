@@ -17,7 +17,6 @@
         </li>
          <li class="nav-item">
           <%= link_to "My Bucket List", items_path, class: "nav-link" %>
-          <%= current_user.photo %>
         </li>
         <li class="nav-item">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
