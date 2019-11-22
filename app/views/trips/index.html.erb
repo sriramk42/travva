@@ -3,14 +3,14 @@
 <div id="tabs" class="trips-container">
   <div>
     <ul class="nav nav-tabs">
-      <li class="active"><a  href="#1" data-toggle="tab" class="light-button">Current trips</a></li>
-      <li><a href="#2" data-toggle="tab" class="light-button">Upcoming trips</a></li>
-      <li><a href="#3" data-toggle="tab" class="light-button">Past trips</a></li>
+      <li><a href="#1" data-toggle="tab" class="<%= tabs_classes('current', @target_tab) %>">Current trips</a></li>
+      <li><a href="#2" data-toggle="tab" class="<%= tabs_classes('future', @target_tab) %>">Upcoming trips</a></li>
+      <li><a href="#3" data-toggle="tab" class="<%= tabs_classes('past', @target_tab) %>">Past trips</a></li>
     </ul>
   </div>
 
   <div class="tab-content trips-time-container">
-    <div class="tab-pane active" id="1">
+    <div class="<%= panes_classe('current', @target_tab) %>" id="1">
       <% if @current_trips.any? %>
         <% @current_trips.each do |trip| %>
           <%= render 'trip', trip: trip %>
@@ -19,7 +19,7 @@
           <center><h2 class="card trip-card">You're not on a trip right now! Plan one ;)</h2></center>
       <% end %>
     </div>
-    <div class="tab-pane" id="2">
+    <div class="<%= panes_classe('future', @target_tab) %>" id="2">
       <% if @future_trips.any? %>
         <% @future_trips.each do |trip| %>
           <%= render 'trip', trip: trip %>
@@ -28,7 +28,7 @@
         <center><h2>You don't have any upcoming trips! Plan one ;)</h2></center>
       <% end %>
     </div>
-    <div class="tab-pane" id="3">
+    <div class="<%= panes_classe('past', @target_tab) %>" id="3">
       <% if @past_trips.any? %>
         <% @past_trips.each do |trip| %>
           <%= render 'trip', trip: trip %>
