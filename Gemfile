@@ -23,6 +23,7 @@ gem 'carrierwave', '~> 1.2'
 # gem 'countries'
 gem 'country_select'
 gem 'pundit'
+gem 'classnames-rails-view'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

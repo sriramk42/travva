@@ -4,11 +4,11 @@
       <div class="col-6">
           <%= simple_form_for (@trip) do |f| %>
 <!--             <#%= f.input :name, label: :"Country" %> -->
-            <%= f.input :name, as: :country, label: :"Country" %>
+            <%= f.input :destination, as: :country, label: :"Country" %>
+            <%= f.input :name, label: :"Trip's name" %>
             <%= f.input :start_date, as: :string, input_html: { id: "start_date" } %>
             <%= f.input :end_date, as: :string, input_html: { id: "end_date" } %>
             <%= f.button :submit, class: "light-button"%>
-            <%= link_to "", items_path, method: :post, id: "submit-link", class: "hidden" %>
           <% end %>
       </div>
   </div>

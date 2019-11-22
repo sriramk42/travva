@@ -6,6 +6,7 @@ class TripsController < ApplicationController
     @past_trips = @trips.past
     @future_trips = @trips.future
     @current_trips = @trips.current
+    @target_tab = params[:target_tab] || 'current'
   end
 
   def show
@@ -23,7 +24,7 @@ class TripsController < ApplicationController
     authorize @trip
     @trip.user = current_user
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to "#{trips_path(target_tab: 'future')}"
     else
       render :new
     end
