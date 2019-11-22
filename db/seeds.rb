@@ -84,17 +84,46 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 
   Item.create! ({
     user: User.last,
-    title: "Louvre",
-    url: 'https://en.wikipedia.org/wiki/Louvre',
+    title: "Sacre-Cœur",
+    url: 'https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris',
     country: "FR",
     city: "Paris",
-    address: "Musée du Louvre, 75058 Paris - France",
+    address: "35 Rue du Chevalier de la Barre, 75018 Paris, France",
     time_of_day: 'Daytime',
     weather: 'Indoor',
-    category: "Museum",
+    category: "Culture",
+    rating: 4,
+    # price: rand(0..20),
+    remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Le_sacre_coeur.jpg"
+  })
+
+  Item.create! ({
+    user: User.last,
+    title: "Eiffel Tower",
+    url: 'https://en.wikipedia.org/wiki/Eiffel_Tower',
+    country: "FR",
+    city: "Paris",
+    address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+    time_of_day: 'Daytime',
+    weather: 'Outdoor',
+    category: "Sightseeing",
     rating: 5,
     # price: rand(0..20),
-    remote_photo_url: "https://images.france.fr/zeaejvyq9bhj/1q80wA2dmc4S2QicA6m0Gg/5e055fe87f6b4049936e205a8623decf/flickr_-_cc_-_manuel_paternity_-_no_modification-_no_commercial_use.jpg?w=1120&h=490&q=70&fm=webp&fit=fill"
+    remote_photo_url: "https://www.hotelcambon.com/images/monuments/eiffel_tower.jpg"
+  })
+
+  Item.create! ({
+    user: User.last,
+    title: "Le Marais",
+    url: 'https://en.wikipedia.org/wiki/Eiffel_Tower',
+    country: "FR",
+    city: "Paris",
+    address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+    time_of_day: 'Daytime',
+    weather: 'Outdoor',
+    category: "Food",
+    rating: 5,
+    # price: rand(0..20)
   })
 
   Item.create! ({
@@ -129,17 +158,16 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 
   Item.create! ({
     user: User.last,
-    title: "Taco Bell",
+    title: "Chocolate Crawl",
     url: '',
-    country: "JP",
-    city: "Tokyo",
-    address: "1 Kinkakujicho, Kita Ward, Kyoto, 603-8361",
+    country: "FR",
+    city: "Paris",
+    address: "St. Germain des Pres",
     time_of_day: 'Daytime',
     weather: 'Indoor',
     category: "Food",
-    rating: 3,
+    rating: 3
     # price: rand(0..20),
-    remote_photo_url: "https://i.redd.it/pv2mrpj2noc21.jpg"
   })
 
   Item.create! ({
