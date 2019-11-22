@@ -71,6 +71,7 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 # }
 
 
+
 #OUTDOOR DAY
 
 # p country[:JP][:city].sample
@@ -230,7 +231,10 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 # })
 # end
 
-# #INDOOR DAY
+
+
+puts "25 Items created!"
+#INDOOR DAY
 
 # 25.times do
 #   Item.create! ({
@@ -302,6 +306,8 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 #   trip.save!
 # end
 
+puts "15 Trips created"
+
 
 #   Item.create! ({
 #     user: User.last,
@@ -347,6 +353,9 @@ type_of_item = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Re
 #     price: 3,
 #     remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
 # })
+
+
+  puts "3 Items created!"
 
 #   Trip.create!({
 
