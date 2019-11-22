@@ -11,6 +11,7 @@ Item.destroy_all if Rails.env.development?
 Trip.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
+puts "Destroying current seed"
 
 require 'faker'
 
@@ -100,6 +101,7 @@ country = {
 })
 end
 
+puts "25 Items created!"
 #INDOOR DAY
 
 # 25.times do
@@ -173,6 +175,8 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   trip.save!
 end
 
+puts "15 Trips created"
+
 
   Item.create! ({
     user: User.last,
@@ -218,6 +222,9 @@ end
     price: 3,
     remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
 })
+
+
+  puts "3 Items created!"
 
 #   Trip.create!({
 
