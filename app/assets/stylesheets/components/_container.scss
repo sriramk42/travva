@@ -1,15 +1,39 @@
 
 .big-container {
   align-items: center;
-  margin-left: 100px;
+  margin-right: 10vw;
+  margin-left: 10vw;
 }
 
 .items-container {
   overflow: scroll;
   align-items: center;
-  margin-left: 30px;
-  margin-right: 100px;
   height: 100vh;
   border-radius: 4px;
   flex: 3;
+  height: 1000px;
+}
+
+.trips-container {
+  align-items: center;
+  margin-right: 20vw;
+  margin-left: 20vw;
+  height: 100vh;
+  border-radius: 4px;
+  height: 900px;
+  opacity: .8;
+}
+
+
+.trips-time-container {
+  overflow: scroll;
+  height: 100vh;
+  border-radius: 4px;
+  height: 900px;
+  opacity: .8;
+  width: 100%;
+}
+
+.override_col {
+  max-width: 100% !important;
 }
