@@ -2,7 +2,7 @@
   justify-content: space-between;
   height: 150px;
   position: relative;
-  }
+}
 
 .clipped-nav {
   clip-path: polygon(100% 0, 100% 48%, 67% 79%, 28% 47%, 0 75%, 0 0);
@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   top: 0;
-  background-color: rgba($white, .7);
+  background-color: rgba($white, 0.7);
   left: 0;
   z-index: 100;
 }
@@ -29,4 +29,8 @@
 
 .nav-item {
   z-index: 10000000000;
+}
+
+.dropdown-top-position {
+  top: auto;
 }
