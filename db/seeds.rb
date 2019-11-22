@@ -165,7 +165,8 @@ trip_name = ['Honeymoon', '5 Year Anniversary', 'Valentines Day', 'Family Trip',
   start_date_value = Faker::Date.forward
   trip = Trip.new ({
     user: User.last,
-    name: "JP",
+    name: trip_name.sample,
+    destination: "JP",
     start_date: start_date_value,
     end_date: start_date_value + rand(7..15).days
   })
@@ -218,29 +219,29 @@ end
     remote_photo_url: "https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg"
 })
 
-  Trip.create!({
+#   Trip.create!({
 
-  user: User.last,
-  name: "ES",
-  start_date:Date.today,
-  end_date:Date.today  + rand(7..15).days
+#   user: User.last,
+#   name: "ES",
+#   start_date:Date.today,
+#   end_date:Date.today  + rand(7..15).days
 
-})
+# })
 
-  TripItem.create! ({
-    trip_id: Trip.last.id,
-    item_id: Item.last.id
-})
+#   TripItem.create! ({
+#     trip_id: Trip.last.id,
+#     item_id: Item.last.id
+# })
 
-  TripItem.create! ({
-    trip_id: Trip.last.id,
-    item_id: Item.last.id - 1
-})
+#   TripItem.create! ({
+#     trip_id: Trip.last.id,
+#     item_id: Item.last.id - 1
+# })
 
-  TripItem.create! ({
-    trip_id: Trip.last.id,
-    item_id: Item.last.id - 2
-})
+#   TripItem.create! ({
+#     trip_id: Trip.last.id,
+#     item_id: Item.last.id - 2
+# })
 
 
 
