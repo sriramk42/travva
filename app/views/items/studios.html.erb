@@ -1,0 +1,58 @@
+<div class="justify-content-center d-flex">
+<%= simple_form_for :search, url: studios_path, method:'GET', html: {class: 'form-inline'} do |f| %>
+    <div class="form-group mb-2 mx-2 rose-studio-copy">
+          <%= f.input :category, collection: Studio::CATEGORY, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @category, include_blank: 'All' %>
+    </div>
+    <div class="form-group mx-2 mb-2 rose-studio-copy">
+          <%= f.input :location, collection: Studio::LOCATION, input_html: {class: 'form-control mr-2 rose_studio_category'}, required: false, selected: @location, include_blank: 'All' %>
+    </div>
+    <div class="form-group">
+          <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2" %>
+    </div>
+      <% end %>
+</div>
+<div class="studios-container d-flex">
+  <div id="map" style="width: 400px; height: 100vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <div class="all-studios">
+      <% @studios.each do |studio| %>
+        <div class="d-flex">
+          <div class="studio-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path studio.photo, height: 300, width: 400, crop: :fill %>')">
+            <p class="studio-name"><%= studio.name %></p>
+            <%= link_to "", studio_path(studio), class: 'studio-card-link' %>
+            <p class="studio-info"><%= studio.description %></p>
+          </div>
+
+          <div class=" d-flex courses-card">
+            <% studio.courses.order("time").each do |course| %>
+              <% if course.time > Date.today %>
+              <div>
+                <div><%@flag = @bookings.any? {|booking| booking.course_id == course.id} %></div>
+                <ul class="flex-column course-card p-0 m-0">
+                  <!-- <div class="course-info-card"> -->
+                    <p style="font-weight: bold"><%= course.name %><%@flag%></p>
+                    <p><%= course.time.strftime('%A, %b %d') %></p>
+                    <p><%= course.time.strftime('%l %p') %></p>
+                    <p class ="extra-info"><%= course.teacher_name %> - <%= course.duration %> min - $<%= course.price %></p>
+                   <!--  <#%= link_to "", course_path(course), class: 'course-card-link' %> -->
+                  <!-- </div> -->
+                  <div>
+                    <%if @flag == false%>
+                      <%= simple_form_for [course, Booking.new] do |f| %>
+                        <%= f.submit "Book", class: 'booking-btn' %>
+                      <% end %>
+                    <% else  %>
+                      <%= simple_form_for [course, Booking.new] do |f| %>
+                      <%= f.submit "Booked ", class: 'booked-btn' %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </ul>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

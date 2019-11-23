@@ -4,6 +4,21 @@
   grid-gap: 16px;
 }
 
+.cards-trip-item {
+  height: 100%;
+  background-size: cover;
+  padding-left: 10px;
+  display: flex;
+  // justify-content: space-between;
+  font-size: 14px;
+  color: #666464;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards-item {
@@ -49,6 +64,8 @@
 
 .card-body {
   padding: 0px;
+  width: 150px;
+  height: 200px;
 }
 
 .card-index {

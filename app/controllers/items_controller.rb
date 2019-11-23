@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = policy_scope(Item).order(created_at: :desc)
-    # @items = Item.geocoded    
+    # @items = Item.geocoded
     @search = {model_name: "search"}
     if params[:search].present?
       @search = @search.merge(search_params.to_h)
@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
         @items = @items.where(country: params[:search][:country])
       end
     end
+
     @search = OpenStruct.new(@search)
 
     @markers = @items.map do |item|
