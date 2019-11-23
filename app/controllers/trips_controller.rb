@@ -7,9 +7,17 @@ class TripsController < ApplicationController
     @future_trips = @trips.future
     @current_trips = @trips.current
     @target_tab = params[:target_tab] || 'current'
+
   end
 
   def show
+    @items = Item.all
+    @query = {model_name: "query"}
+    if params[:query].present?
+      @location = params[:query][:location]
+      @category = params[:query][:category]
+      @items = Item.where("country ILIKE ? AND category ILIKE ?", "%#{@country}%", "%#{@category}%")
+    end
   end
 
   def new
