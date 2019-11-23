@@ -1,10 +1,10 @@
-import places from "places.js";
+// import places from "places.js";
 
-const initAutocomplete = () => {
-  const addressInput = document.getElementById("item_address");
-  if (addressInput) {
-    places({ container: addressInput, language: "en" });
-  }
-};
+// const initAutocomplete = () => {
+//   const addressInput = document.getElementById("item_address");
+//   if (addressInput) {
+//     places({ container: addressInput, language: "en" });
+//   }
+// };
 
-export { initAutocomplete };
+// export { initAutocomplete };

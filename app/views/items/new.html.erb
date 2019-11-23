@@ -1,22 +1,22 @@
 <div class="container mt-3 p-5">
   <h1 class="text-center mb-3">Add a New Item</h1>
   <div class="row mt-3 justify-content-center pt-3">
-      <div class="col-6">
-          <%= simple_form_for(@item) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :url %>
-            <%= f.input :address, input_html: {id: 'item_address'} %>
-            <%= f.input :time_of_day, collection: Item::TIME_OF_DAY %>
-            <%= f.input :weather, collection: Item::WEATHER %>
-            <%= f.input :category, collection: Item::CATEGORY %>
-            <%#= f.input :price %>
-            <%= f.input :country%>
-            <%= f.input :city %>
-            <%= f.input :rating, collection: 1..5 %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.button :submit, id:"sweet-alert-demo", class: "light-button"%>
-            <%= link_to "", items_path, method: :post, id: "submit-link", class: "hidden" %>
-          <% end %>
-      </div>
+    <div class="col-6">
+        <%= simple_form_for(@item) do |f| %>
+          <%= f.input :title, input_html: {id: 'item_title'} %>
+          <%= f.input :url %>
+          <%= f.input :address, input_html: {id: 'item_address'} %>
+          <%= f.input :time_of_day, collection: Item::TIME_OF_DAY %>
+          <%= f.input :weather, collection: Item::WEATHER %>
+          <%= f.input :category, collection: Item::CATEGORY %>
+          <%#= f.input :price %>
+          <%= f.input :country, input_html: {id: 'item_country'} %>
+          <%= f.input :city, input_html: {id: 'item_city'} %>
+          <%= f.input :rating, collection: 1..5 %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, id:"sweet-alert-demo", class: "light-button"%>
+          <%= link_to "", items_path, method: :post, id: "submit-link", class: "hidden" %>
+        <% end %>
+    </div>
   </div>
