@@ -357,29 +357,30 @@ puts "15 Trips created"
 
   puts "3 Items created!"
 
-#   Trip.create!({
+  Trip.create!({
 
-#   user: User.last,
-#   name: "ES",
-#   start_date:Date.today,
-#   end_date:Date.today  + rand(7..15).days
+  user: User.last,
+  name: "Trip to Spain",
+  destination: "ES",
+  start_date:Date.today,
+  end_date:Date.today  + rand(7..15).days
 
-# })
+})
 
-#   TripItem.create! ({
-#     trip_id: Trip.last.id,
-#     item_id: Item.last.id
-# })
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id
+})
 
-#   TripItem.create! ({
-#     trip_id: Trip.last.id,
-#     item_id: Item.last.id - 1
-# })
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id - 1
+})
 
-#   TripItem.create! ({
-#     trip_id: Trip.last.id,
-#     item_id: Item.last.id - 2
-# })
+  TripItem.create! ({
+    trip_id: Trip.last.id,
+    item_id: Item.last.id - 2
+})
 
 
 
