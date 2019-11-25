@@ -31,6 +31,7 @@
       Add to trip
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id='trip-items-dropdown'>
+        <% @trips = @trips.where(destination: item.country) %>
         <% @trips.each do |trip| %>
         <%= link_to trip.name, trip_trip_items_path(trip, item: item), method: :post, class: 'dropdown-item', remote: true %>
         <% end %>
