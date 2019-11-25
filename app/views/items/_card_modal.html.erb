@@ -16,6 +16,7 @@
           <p>Category: <%= item.category.capitalize %></p>
           <p>Time of day: <%= item.time_of_day %></p>
           <p>Weather: <%= item.weather %></p>
+          <% if item.rating %>
           <p>Rating: <% item.rating.times do  %>
             <i class="fas fa-star"></i>
             <% end %>
@@ -23,6 +24,7 @@
             <i class="far fa-star"></i>
             <% end %>
           </p>
+          <% end %>
         </div>
         <div class="m-2 p-2">
           <p><%= cl_image_tag item.photo, height: 300, width: 400, crop: :fill %></p>

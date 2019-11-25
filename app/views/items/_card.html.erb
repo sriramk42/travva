@@ -15,6 +15,7 @@
           <%= item.category.capitalize %>
         </div>
         <div class="card-item-rating">
+          <% if item.rating  %>
           <p><% item.rating.times do  %>
               <i class="fas fa-star"></i>
               <% end %>
@@ -22,6 +23,7 @@
               <i class="far fa-star"></i>
               <% end %>
           </p>
+          <% end  %>
         </div>
     </div>
     <%= render 'items/card_modal', item: item %>
