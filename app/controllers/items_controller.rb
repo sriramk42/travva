@@ -60,8 +60,15 @@ class ItemsController < ApplicationController
     else
       @city = "Paris"
     end
-      # city = "Paris"
-    url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{@city}&tag_labels=sightseeing&count=30&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
+
+    url = "https://www.triposo.com/api/20190906/location.json?tag_labels=city&annotate=trigram:#{@city}&trigram=>=0.3&count=10&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
+    response = RestClient.get url
+    city_info = JSON.parse(response)
+    city_id = city_info["results"][0]["id"]
+    @city_name = city_info["results"][0]["name"]
+    @city_snippet = city_info["results"][0]["snippet"]
+
+    url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{city_id}&tag_labels=sightseeing&count=30&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
     response = RestClient.get url
     @repos = JSON.parse(response)
 
