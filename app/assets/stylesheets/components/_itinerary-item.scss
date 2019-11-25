@@ -4,6 +4,12 @@
   grid-gap: 16px;
 }
 
+.cards-small-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .cards-trip-item {
   height: 100%;
   background-size: cover;
@@ -62,7 +68,19 @@
   border-top-right-radius: 4px;
 }
 
+.card-picture-small {
+  width: 150px;
+  height: 100%;
+  background-size: cover;
+  border-radius: 4px;
+}
 .card-body {
+  padding: 0px;
+  width: 150px;
+  height: 200px;
+}
+
+.card-body-small {
   padding: 0px;
   width: 150px;
   height: 200px;
@@ -74,7 +92,20 @@
   border-radius: 4px;
 }
 
+.card-index-small {
+  border: solid 15px $cream;
+  background-color: $cream;
+  border-radius: 4px;
+  display: flex;
+  height: 150px;
+  width: 350px;
+}
+
 .card-index .card-body-item {
+  position: relative;
+}
+
+.card-index-small {
   position: relative;
 }
 
@@ -84,19 +115,29 @@
   top: -188px;
 }
 
-.card-left {
-  text-align: left;
+.card-body-small-item {
+  padding: 5%;
+  width: 50%;
+}
+
+
+.card-title-small {
+  text-align: right;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   color: $brown;
 }
 
-.card-right {
+.card-category-small {
   text-align: right;
-  color: $brown;
-  font-size: 12px;
+  font-size: 10px;
   font-style: italic;
   color: $brown;
+}
+
+.card-small-item-rating {
+  text-align: right;
+  font-size: 10px !important;
 }
 
 .fas {

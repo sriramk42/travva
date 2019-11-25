@@ -1,28 +1,33 @@
-  <div class="card-index" data-toggle="modal" data-target="#card-item-modal-<%= trip_item.id %>">
+  <div class="card-index-small" data-toggle="modal" data-target="#card-small-item-modal-<%= trip_item.id %>">
     <% if trip_item.item.photo.present? %>
-      <div class="card-picture" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 200, width: 300 %>)">
+      <div class="card-picture-small" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 100, width: 200 %>)">
     <% else %>
-      <div class="card-picture <%= trip_item.category.downcase %>">
+      <div class="card-picture-small <%= trip_item.category.downcase %>">
     <% end %>
 
       </div>
 
-    <div class="card-body-item d-flex">
-      <div class="card-left">
+    <div class="card-body-small-item">
+      <div class="card-title-small">
         <%= trip_item.item.title.capitalize %>
       </div>
-        <div class="card-right">
-          <%= trip_item.item.category.capitalize %>
-        </div>
-        <div class="card-item-rating">
-          <p><% trip_item.item.rating.times do  %>
-              <i class="fas fa-star"></i>
-              <% end %>
-              <% (5 - trip_item.item.rating).times do  %>
-              <i class="far fa-star"></i>
-              <% end %>
-          </p>
+      <div class="card-category-small">
+        <%= trip_item.item.category.capitalize %>
+      </div>
+      <div class="card-small-item-rating">
+        <p><% trip_item.item.rating.times do  %>
+            <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - trip_item.item.rating).times do  %>
+            <i class="far fa-star"></i>
+            <% end %>
+        </p>
+
+      <div class="modal-footer">
+        <button type="button" class="btn dark-button">+</button>
+      </div>
         </div>
     </div>
-    <%= render 'items/card_modal', item: trip_item.item %>
+    <%= render 'items/trip_card_modal', item: trip_item.item %>
   </div>
+

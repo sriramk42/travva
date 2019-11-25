@@ -1,54 +1,52 @@
 
 <!-- STUDIOS INDEX PAGE  -->
+<div class="trips-show-container">
+  <div class="app">
 
-<div class="app">
+    <div class="d-flex">
+      <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
+        <%= hidden_field_tag 'search[date]', params[:search][:date] if params[:search] %>
+        <div class="form-group dark-dropdown">
+          <%= f.input :category, collection: Item::CATEGORY, input_html: {class: 'form-control dark-category'}, required: false, selected: @category, include_blank: 'All' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Search",  class: "btn display-none" %>
+        </div>
+      <% end %>
+    </div>
 
-  <div class="justify-content-center d-flex">
-    <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
-      <%= hidden_field_tag 'search[date]', params[:search][:date] if params[:search] %>
-      <div class="form-group mx-2 mb-2 rose-studio-copy">
-        <%= f.input :category, collection: Item::CATEGORY, input_html: {class: 'form-control mr-2 rose_studio_category'}, required: false, selected: @category, include_blank: 'All' %>
-      </div>
-      <div class="form-group">
-        <%= f.submit "Search",  class: "btn rose_studio_button mb-2 mx-2 display-none" %>
-      </div>
-    <% end %>
+    <ul class="hs">
+      <% @items.each do |item| %>
+      <%= render 'items/card', item: item %>
+      <% end %>
+    </ul>
+
   </div>
 
-  <ul class="hs">
-    <% @items.each do |item| %>
-    <%= render 'items/card', item: item %>
-    <% end %>
-  </ul>
-
-</div>
-
-
-<div class="justify-content-center d-flex">
-<%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
-  <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
-    <div class="form-group mb-2 mx-2 rose-studio-copy">
-          <%= f.input :date, collection: @dates, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @date, include_blank: 'All' %>
-    </div>
-    <div class="form-group">
-          <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2 display-none" %>
-    </div>
-      <% end %>
-</div>
-
-<div class="studios-container d-flex">
-
-
-        <div class="items-container">
-          <div class="col-3 override_col">
-            <div class="cards-item">
-              <% @trip_items.each do |item| %>
-                <%= render 'items/trip_card', trip_item: item %>
-              <% end %>
-            </div>
+  <div class="d-flex">
+    <div class="justify-content-center">
+      <div class="d-flex justify-content-center">
+        <%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
+          <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
+          <div class="form-group dark-dropdown-days">
+            <%= f.input :date, collection: @dates, input_html: {class: 'form-control dark-category'}, required: false, selected: @date, include_blank: 'All' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Search", class: "btn display-none" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="items-container">
+        <div class="col-3 override_col">
+          <div class="cards-small-item">
+            <% @trip_items.each do |item| %>
+              <%= render 'items/trip_card', trip_item: item %>
+            <% end %>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="map" style="width: 400px; height: 100vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-  <div id="map" style="width: 400px; height: 100vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+  </div>
 </div>
