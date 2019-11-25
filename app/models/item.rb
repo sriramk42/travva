@@ -3,7 +3,6 @@ class Item < ApplicationRecord
   has_many :trip_items, dependent: :destroy
   validates :title, presence: true
   validates :country, presence: true
-  validates :rating, inclusion: { in: [1, 2, 3, 4, 5] }, numericality: { only_integer: true }
   # validates :price, numericality: { only_float: true }
   mount_uploader :photo, PhotoUploader
   geocoded_by :address
@@ -16,7 +15,7 @@ class Item < ApplicationRecord
   COUNTRY = Item.select(:country).map(&:country).uniq.reject(&:blank?).map(&:capitalize)
   TIME_OF_DAY = ["Day", "Night"]
   WEATHER = ["Outdoor", "Indoor"]
-  
+
   private
 
   def set_country_name
