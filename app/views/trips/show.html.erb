@@ -27,12 +27,9 @@
 
 
 <div class="justify-content-center d-flex">
-<%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
+<%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
     <div class="form-group mb-2 mx-2 rose-studio-copy">
-          <%= f.input :country, collection: Item::COUNTRY, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @country, include_blank: 'All' %>
-    </div>
-    <div class="form-group mx-2 mb-2 rose-studio-copy">
-          <%= f.input :category, collection: Item::CATEGORY, input_html: {class: 'form-control mr-2 rose_studio_category'}, required: false, selected: @category, include_blank: 'All' %>
+          <%= f.input :date, collection: @dates, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @date, include_blank: 'All' %>
     </div>
     <div class="form-group">
           <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2" %>
@@ -46,7 +43,7 @@
         <div class="items-container">
           <div class="col-3 override_col">
             <div class="cards-item">
-              <% @items.each do |item| %>
+              <% @trip.trip_items.each do |item| %>
                 <%= render 'items/card', item: item %>
               <% end %>
             </div>
