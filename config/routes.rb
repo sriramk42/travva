@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :items do
     resources :trip_items, only: [:create, :destroy]
   end
+  get 'suggestions', to: 'items#suggestions', as: :suggestions
 end

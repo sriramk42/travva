@@ -55,6 +55,25 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def suggestions
+    if params["search"]
+      @city = params["search"]["city"]
+    else
+      @city = "Paris"
+    end
+      # city = "Paris"
+    url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{@city}&tag_labels=sightseeing&count=30&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
+    response = RestClient.get url
+    @repos = JSON.parse(response)
+
+    @markers = @repos["results"].map do |repo|
+      {
+        lat: repo["coordinates"]["latitude"],
+        lng: repo["coordinates"]["longitude"]
+      }
+    end
+  end
+
   private
 
   def set_item
