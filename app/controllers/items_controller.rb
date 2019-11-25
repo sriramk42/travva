@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:edit, :update, :destroy]
 
   def index
     @items = policy_scope(Item).order(created_at: :desc)
@@ -24,9 +24,8 @@ class ItemsController < ApplicationController
         lng: item.longitude
       }
     end
-  end
 
-  def show
+    @trips = Trip.future
   end
 
   def new
