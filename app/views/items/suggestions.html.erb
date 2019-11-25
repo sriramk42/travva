@@ -13,11 +13,14 @@
       height: 600px;"
       data-markers="<%= @markers.to_json %>"
     ></div>
-    <div class="col-8">
-      <div class="suggestions-cards">
-      <% @repos["results"].each do |result| %>
-        <%= render 'items/suggestioncard', result: result %>
-      <% end %>
+
+    <div class="items-container">
+      <div class="col-8 override_col">
+        <div class="cards-item">
+          <% @repos["results"].each do |result| %>
+            <%= render 'items/suggestioncard', result: result %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
