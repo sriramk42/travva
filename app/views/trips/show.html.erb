@@ -4,15 +4,13 @@
 <div class="app">
 
   <div class="justify-content-center d-flex">
-    <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
-      <div class="form-group mb-2 mx-2 rose-studio-copy">
-        <%= f.input :country, collection: Item::COUNTRY, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @country, include_blank: 'All' %>
-      </div>
+    <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
+      <%= hidden_field_tag 'search[date]', params[:search][:date] if params[:search] %>
       <div class="form-group mx-2 mb-2 rose-studio-copy">
         <%= f.input :category, collection: Item::CATEGORY, input_html: {class: 'form-control mr-2 rose_studio_category'}, required: false, selected: @category, include_blank: 'All' %>
       </div>
       <div class="form-group">
-        <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2" %>
+        <%= f.submit "Search",  class: "btn rose_studio_button mb-2 mx-2 display-none" %>
       </div>
     <% end %>
   </div>
@@ -27,12 +25,13 @@
 
 
 <div class="justify-content-center d-flex">
-<%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
+<%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
+  <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
     <div class="form-group mb-2 mx-2 rose-studio-copy">
           <%= f.input :date, collection: @dates, input_html: {class: 'form-control rose_studio_category'}, required: false, selected: @date, include_blank: 'All' %>
     </div>
     <div class="form-group">
-          <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2" %>
+          <%= f.submit "Search", class: "btn rose_studio_button mb-2 mx-2 display-none" %>
     </div>
       <% end %>
 </div>
