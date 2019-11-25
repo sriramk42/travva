@@ -1,28 +1,28 @@
   <div class="card-index" data-toggle="modal" data-target="#card-item-modal-<%= trip_item.id %>">
-    <% if item.photo.present? %>
-      <div class="card-picture" style="background-image: url(<%= cl_image_path item.photo, height: 200, width: 300 %>)">
+    <% if trip_item.item.photo.present? %>
+      <div class="card-picture" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 200, width: 300 %>)">
     <% else %>
-      <div class="card-picture <%= item.category.downcase %>">
+      <div class="card-picture <%= trip_item.category.downcase %>">
     <% end %>
 
       </div>
 
     <div class="card-body-item d-flex">
       <div class="card-left">
-        <%= item.title.capitalize %>
+        <%= trip_item.item.title.capitalize %>
       </div>
         <div class="card-right">
-          <%= item.category.capitalize %>
+          <%= trip_item.item.category.capitalize %>
         </div>
         <div class="card-item-rating">
-          <p><% item.rating.times do  %>
+          <p><% trip_item.item.rating.times do  %>
               <i class="fas fa-star"></i>
               <% end %>
-              <% (5 - item.rating).times do  %>
+              <% (5 - trip_item.item.rating).times do  %>
               <i class="far fa-star"></i>
               <% end %>
           </p>
         </div>
     </div>
-    <%= render 'items/card_modal', item: item %>
+    <%= render 'items/card_modal', item: trip_item.item %>
   </div>
