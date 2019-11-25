@@ -19,7 +19,9 @@
     <div class="items-container">
       <div class="col-10 override_col">
         <div class="cards-item">
-          <%= render partial: 'card', collection: @items %>
+          <% @items.each do |item| %>
+           <%= render 'items/card', item: item %>
+          <% end %>
         </div>
       </div>
     </div>
