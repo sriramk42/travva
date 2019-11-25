@@ -1,84 +1,54 @@
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-
-}
-
-.rose-studio{
-
- color: $rose;
- border: 1px solid #d1a1a1;
+.dark-dropdown {
+ color: $brown;
+ border: none;
  padding: 8px 40px;
- border-radius: 50px;
  font-weight: bold;
- opacity: 0.6;
+ opacity: 0.8;
  transition: opacity 0.3s ease;
  margin: auto;
- background: white;
+ background: $cream;
+ border-radius: 4px !important;
+ margin-bottom: 10px !important;
 }
 
-
-.rose-studio-copy{
-
- color: $rose;
- border: 1px solid white;
- padding: 8px 40px;
- border-radius: 50px;
+.dark-dropdown-days {
+ color: $brown;
+ border: none;
+ padding: 5px 36%;
  font-weight: bold;
- opacity: 0.6;
+ opacity: 0.8;
  transition: opacity 0.3s ease;
  margin: auto;
- background: white;
+ background: $cream;
+ margin-top: 10px;
+ margin-bottom: 10px !important;
+ border-radius: 4px !important;
 }
 
-
-.rose_studio_category{
- color: $rose;
- border: 1px solid #d1a1a1;
- padding: 8px 40px;
- border-radius: 50px;
+.dark-category{
+ color: $brown;
+ border: none;
  font-weight: bold;
  opacity: 0.6;
- transition: opacity 0.3s ease;
+ transition: ease;
  margin: auto;
- background: white;
+ background: $cream;
  margin-left: 24px;
 }
 
-
-.rose_studio_button{
- color: $rose;
- border: 1px solid #d1a1a1;
- padding: 6px 36px;
- border-radius: 4px;
- font-weight: bold;
- opacity: 0.6;
- transition: opacity 0.3s ease;
- margin: auto;
- background: white;
- margin-left: 24px;
-}
-
-.rose_studio_button:hover {
+.dark-dropdown label {
   opacity: 1;
-  color: $rose;
-  background: white;
+  font-size: 12px;
 }
 
+.dark-dropdown option {
+  opacity: 1;
+}
 
-
-
-
-.studios-container {
-  margin-left: 64px !important;
-  margin-right: 64px !important;
-  margin-bottom: 0px !important;
-  padding-bottom: 0px !important;
+.dark-category:hover {
+  opacity: 1;
+  color: $cream;
+  background: $brown;
 }
 
 .all-studios {
@@ -223,6 +193,5 @@ p {
   opacity: 1;
   color: $light-gray;
 }
-
 
 

@@ -21,7 +21,7 @@
 .hs {
   display: grid;
   // grid-gap: calc(var(--gutter) / 2);
-  grid-template-columns: repeat(100000, calc(30% - var(--gutter) * 2));
+  grid-template-columns: repeat(100000, calc(300px - var(--gutter) * 2));
   // grid-template-rows: minmax(150px, 1fr);
 
   overflow-x: scroll;
@@ -41,7 +41,7 @@ body {
 body {
   display: grid;
   place-items: center;
-  background: #456173;
+  background: transparent;
 }
 
 ul {
@@ -58,7 +58,7 @@ h3 {
 .app {
   width: 100vw;
   height: 400px;
-  background: #DBD0BC;
+  background: transparent;
   overflow-y: scroll;
 }
 
