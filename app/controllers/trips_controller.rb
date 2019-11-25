@@ -18,6 +18,16 @@ class TripsController < ApplicationController
       @category = params[:query][:category]
       @items = Item.where("country ILIKE ? AND category ILIKE ?", "%#{@country}%", "%#{@category}%")
     end
+
+    @dates = (@trip.start_date..@trip.end_date).to_a
+
+    @trip.trip_items = TripItem.all
+    @search = {model_name: "serch"}
+    if params[:search].present?
+      # @date = params[:search][:date]
+      @trip.trip_items = TripItem.where("date ILIKE ?", "%#{@date}%")
+    end
+
   end
 
   def new

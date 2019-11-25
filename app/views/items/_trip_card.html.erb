@@ -1,4 +1,4 @@
-  <div class="card-index" data-toggle="modal" data-target="#card-item-modal-<%= item.id %>">
+  <div class="card-index" data-toggle="modal" data-target="#card-item-modal-<%= trip_item.id %>">
     <% if item.photo.present? %>
       <div class="card-picture" style="background-image: url(<%= cl_image_path item.photo, height: 200, width: 300 %>)">
     <% else %>
