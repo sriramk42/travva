@@ -5,7 +5,10 @@ import "plugins/flatpickr";
 import { initMapbox } from "../plugins/init_mapbox";
 import { home } from "../home/home";
 import { initSweetalert } from "../plugins/init_sweetalert";
+import { dropdownSubmit } from "../plugins/dropsubmit";
 
 window.$ = window.jQuery = require('jquery');
 
+dropdownSubmit();
+initAutocomplete();
 initMapbox();
