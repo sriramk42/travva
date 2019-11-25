@@ -12,7 +12,9 @@
   <body>
     <%= render 'shared/background' %>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div id="alerts">
+      <%= render 'shared/flashes' %>
+    </div>
     <%= yield %>
     <%= render "shared/footer" %>
       </div> <!-- don't delete this div -->
@@ -21,5 +23,6 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
+
   </body>
 </html>

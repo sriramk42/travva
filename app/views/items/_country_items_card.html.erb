@@ -15,12 +15,15 @@
         <%= item.category.capitalize %>
       </div>
       <div class="card-medium-item-rating">
-        <p><% item.rating.times do  %>
-            <i class="fas fa-star"></i>
+        <p>
+          <% if item.rating %>
+            <% item.rating.times do  %>
+              <i class="fas fa-star"></i>
             <% end %>
             <% (5 - item.rating).times do  %>
-            <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
             <% end %>
+          <% end  %>
         </p>
 
       <div class="modal-footer">

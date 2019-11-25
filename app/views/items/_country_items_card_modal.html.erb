@@ -16,12 +16,15 @@
           <p>Category: <%= item.category.capitalize %></p>
           <p>Time of day: <%= item.time_of_day %></p>
           <p>Weather: <%= item.weather %></p>
-          <p>Rating: <% item.rating.times do  %>
-            <i class="fas fa-star"></i>
+          <p>Rating:
+            <% if item.rating %>
+              <% item.rating.times do  %>
+               <i class="fas fa-star"></i>
+              <% end %>
+                <% (5 - item.rating).times do  %>
+              <i class="far fa-star"></i>
             <% end %>
-            <% (5 - item.rating).times do  %>
-            <i class="far fa-star"></i>
-            <% end %>
+            <% end  %>
           </p>
         </div>
         <div class="m-2 p-2">
