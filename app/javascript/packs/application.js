@@ -5,6 +5,9 @@ import { initAutocomplete } from "plugins/init_autocomplete";
 import { initMapbox } from "../plugins/init_mapbox";
 import { home } from "../home/home";
 import { initSweetalert } from "../plugins/init_sweetalert";
+import { dropdownSubmit } from "../plugins/dropsubmit";
 
+
+dropdownSubmit();
 initAutocomplete();
 initMapbox();

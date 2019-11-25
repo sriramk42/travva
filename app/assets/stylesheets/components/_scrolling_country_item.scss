@@ -62,6 +62,133 @@ h3 {
   overflow-y: scroll;
 }
 
+
+
+
+
+
+.cards-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cards-trip-item {
+  height: 100%;
+  background-size: cover;
+  padding-left: 10px;
+  display: flex;
+  // justify-content: space-between;
+  font-size: 14px;
+  color: #666464;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-item {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-item {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-item {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-picture {
+  width: 100%;
+  background-size: cover;
+  height: 200px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.card-body {
+  padding: 0px;
+  width: 150px;
+  height: 200px;
+}
+
+.card-index {
+  border: solid 30px $cream;
+  background-color: $cream;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.card-index .card-body-item {
+  position: relative;
+}
+
+.card-body-item .card-item-rating {
+  position: absolute;
+  right: 24px;
+  top: -188px;
+}
+
+.card-left {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  color: $brown;
+}
+
+.card-right {
+  text-align: right;
+  color: $brown;
+  font-size: 12px;
+  font-style: italic;
+  color: $brown;
+}
+
+.fas {
+  color: $orange;
+  font-size: 12px;
+}
+
+.far {
+  color: $orange;
+  font-size: 12px;
+}
+
+.card-index {
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+
+
+
 // .hs > li,
 // .thing {
 //   scroll-snap-align: center;

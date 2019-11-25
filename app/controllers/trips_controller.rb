@@ -11,7 +11,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @items = Item.all
+    @items = current_user.items
     @query = {model_name: "query"}
     if params[:query].present?
       @location = params[:query][:location]
@@ -21,11 +21,15 @@ class TripsController < ApplicationController
 
     @dates = (@trip.start_date..@trip.end_date).to_a
 
-    @trip.trip_items = TripItem.all
-    @search = {model_name: "serch"}
-    if params[:search].present?
-      # @date = params[:search][:date]
-      @trip.trip_items = TripItem.where("date ILIKE ?", "%#{@date}%")
+    @search = {model_name: "search"}
+    if params[:search][:date].present?
+      @date = params[:search][:date]
+      @trip_items = current_user.trip_items.where(date: Date.parse(params[:search][:date]))
+      if @trip_items.empty?
+        flash[:alert] = "No items found for selected date."
+      end
+    else
+      @trip_items = @trip.trip_items
     end
 
   end
