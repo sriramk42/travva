@@ -11,18 +11,18 @@ class TripsController < ApplicationController
   end
 
   def show
-    @items = current_user.items
+    @items = current_user.items.where(country: @trip.destination)
     @query = {model_name: "query"}
     if params[:query].present?
-      @location = params[:query][:location]
+      # @items = current_user.items.where("country ILIKE ?", "%#{params[:query][:location]}%") if params[:query][:location]
       @category = params[:query][:category]
-      @items = Item.where("country ILIKE ? AND category ILIKE ?", "%#{@country}%", "%#{@category}%")
+      @items = @items.where("category ILIKE ?", "%#{@category}%")
     end
 
     @dates = (@trip.start_date..@trip.end_date).to_a
 
     @search = {model_name: "search"}
-    if params[:search][:date].present?
+    if params[:search] && params[:search][:date].present?
       @date = params[:search][:date]
       @trip_items = current_user.trip_items.where(date: Date.parse(params[:search][:date]))
       if @trip_items.empty?

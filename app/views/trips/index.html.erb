@@ -14,6 +14,7 @@
       <% if @current_trips.any? %>
         <% @current_trips.each do |trip| %>
           <%= render 'trip', trip: trip %>
+          <%= link_to "", trip_path(trip), id: "submit-link"%>
         <% end %>
       <% else %>
           <center><h2 class="trip-card">You're not on a trip right now! <%= link_to "Why don't you plan one?", new_trip_path %></h2></center>
