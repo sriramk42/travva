@@ -1,20 +1,26 @@
 <div class="container mt-3 p-5">
-  <center><h1>TRAVVA</h1></center>
-  <center><h2>Simplify your travel.</h2></center>
-  <center><h2>Goodbye excel. Hello Travva.</h2></center>
-<div class="product-features container d-flex justify-items center mt-3 p-5">
+  <div class="home_center">
+  <h1>TRAVVA</h1>
+  <h2>Simplify your travel.</h2>
+  <h2>Goodbye excel. Hello Travva.</h2>
+  <br>
+  </div>
+  <div class="home-button">
+  <%= link_to "Plan a trip", trips_path, class: "btn dark-button", id: "button-home"%>
+  </div>
+<div class="product-features container d-flex justify-items center">
   <div class="float33 feature text-center m-5">
-    <%= image_tag("angryb.gif", size: "160") %>
+   <!--  <#%= image_tag("angryb.gif", size: "160") %> -->
     <h3>How do I plan my trip?</h3>
     <p>blabla</p>
   </div>
   <div class="float33 feature text-center m-5">
-    <%= image_tag("planb.gif", size: "160") %>
+   <!--  <#%= image_tag("planb.gif", size: "160") %> -->
     <h3>Dream Big.</h3>
     <p>Plan it with Travva</p>
   </div>
   <div class="float33 feature text-center m-5">
-    <%= image_tag("mapb.gif", size: "160") %>
+  <!--   <#%= image_tag("mapb.gif", size: "160") %> -->
     <h3>You’re going to Paris.</h3>
     <p>Yeah! Enjoy!</p>
   </div>

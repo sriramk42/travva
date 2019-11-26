@@ -18,6 +18,6 @@ class Trip < ApplicationRecord
   end
 
   def set_photo
-    self.remote_photo_url = "https://source.unsplash.com/1600x900/?#{self.name}"
+    self.remote_photo_url = "https://source.unsplash.com/1600x900/?#{self.destination}"
   end
 end
