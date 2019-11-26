@@ -43,6 +43,28 @@
   }
 }
 
+.dark-button-trip {
+  color: $cream;
+  padding: none;
+  border-radius: 50px;
+  margin-top: 175%;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  background: $brown;
+  transition: background 0.1s ease;
+  border: 2px solid $brown;
+
+   &:hover{
+    background: $cream;
+    color: $brown;
+    border-color: $brown;
+    text-decoration: none;
+  }
+}
+
 .trips-button-red {
   color: $cream;
   padding: 8px 24px;

@@ -1,5 +1,5 @@
 class TripItem < ApplicationRecord
   belongs_to :trip
   belongs_to :item
-  validates_uniqueness_of :trip_id, scope: :item_id
+  validates_uniqueness_of :trip_id, scope: :date
 end

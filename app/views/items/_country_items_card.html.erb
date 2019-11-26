@@ -25,11 +25,13 @@
             <% end %>
           <% end  %>
         </p>
-      <button class="btn btn-secondary" type="button" aria-haspopup="true" aria-expanded="false">
+      </div>
+      <div>
+      <button class="btn dark-button-trip" type="button" aria-haspopup="true" aria-expanded="false">
       +
-      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: '' %>
+      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: 'display-none', remote: true %>
       </button>
-        </div>
+      </div>
     </div>
     <%= render 'items/trip_card_modal', item: item %>
   </div>

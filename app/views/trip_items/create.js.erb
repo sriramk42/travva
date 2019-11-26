@@ -1,2 +1,8 @@
 document.getElementById('alerts').innerHTML = "<%= j render 'shared/flashes' %>"
 $('<%= "#dropdownTripButton#{@item_id}" %>').dropdown('toggle');
+
+const newDayItem = document.querySelector('.cards-small-item')
+const content = "<%= j render 'items/trip_card', trip_item: @trip_item %>"
+if (newDayItem) {
+  newDayItem.insertAdjacentHTML('beforeend', content);
+}
