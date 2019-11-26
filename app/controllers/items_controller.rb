@@ -73,10 +73,12 @@ class ItemsController < ApplicationController
     countries_info = JSON.parse(RestClient.get country_code_url)
     country = countries_info["results"].select { |countryhash| countryhash["country_id"] == countryid }
     @country = country[0]["name"]
+    c = ISO3166::Country.find_country_by_name(@country)
+    @country_code = c.alpha2
 
-    country_code_url = "https://restcountries.eu/rest/v2/name/#{@country}?fullText=true"
-    country_info = JSON.parse(RestClient.get country_code_url)
-    @country_code = country_info[0]["alpha2Code"]
+    # country_code_url = "https://restcountries.eu/rest/v2/name/#{@country}?fullText=true"
+    # country_info = JSON.parse(RestClient.get country_code_url)
+    # @country_code = country_info[0]["alpha2Code"]
 
     url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{city_id}&tag_labels=sightseeing&count=60&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
     response = RestClient.get url
