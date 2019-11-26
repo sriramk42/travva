@@ -240,6 +240,7 @@ DEPENDENCIES
   carrierwave (~> 1.2)
   classnames-rails-view
   cloudinary (~> 1.9.1)
+  countries
   country_select
   devise
   dotenv-rails
