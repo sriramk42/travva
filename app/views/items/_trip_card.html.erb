@@ -1,31 +1,42 @@
   <div class="card-index-small" data-toggle="modal" data-target="#card-small-item-modal-<%= trip_item.id %>">
     <% if trip_item.item.photo.present? %>
-      <div class="card-picture-small" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 100, width: 200 %>)">
-    <% else %>
+    <div class="card-picture-small" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 100, width: 200 %>)">
+      <% else %>
       <div class="card-picture-small <%= trip_item.item.category.downcase %>">
-    <% end %>
-
-      </div>
-
-    <div class="card-body-small-item">
-      <div class="card-title-small">
-        <%= trip_item.item.title.capitalize %>
-      </div>
-      <div class="card-category-small">
-        <%= trip_item.item.category.capitalize %>
-      </div>
-      <div class="card-small-item-rating">
-        <% if trip_item.item.rating %>
-          <p><% trip_item.item.rating.times do  %>
-              <i class="fas fa-star"></i>
-              <% end %>
-              <% (5 - trip_item.item.rating).times do  %>
-              <i class="far fa-star"></i>
-              <% end %>
-          </p>
         <% end %>
+
       </div>
-    </div>
+
+      <div class="card-body-small-item">
+        <div class="card-title-small">
+          <%= trip_item.item.title.capitalize %>
+        </div>
+        <div class="card-category-small">
+          <%= trip_item.item.category.capitalize %>
+        </div>
+        <div class="card-category-small">
+          <% if trip_item.date.nil? %>
+          <p>No date selected.</p>
+          <%= simple_form_for trip_item, html: {class: 'form-inline dropdown-form'} do |f| %>
+          <%= f.input :date, collection: @dates %>
+          <% end %>
+          <% else %>
+          <p><%= trip_item.date.strftime('%A, %b %d') %></p>
+          <% end %>
+        </div>
+        <div class="card-small-item-rating">
+          <% if trip_item.item.rating %>
+          <p><% trip_item.item.rating.times do  %>
+            <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - trip_item.item.rating).times do  %>
+            <i class="far fa-star"></i>
+            <% end %>
+          </p>
+          <% end %>
+        </div>
+      </div>
+
     <%= render 'items/trip_card_modal', item: trip_item.item %>
   </div>
 

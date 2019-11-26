@@ -4,7 +4,8 @@ const dropdownSubmit = () => {
   forms.forEach((form) => {
     const dropdown = form.querySelector('select');
     dropdown.addEventListener('change', (event) => {
-      form.querySelector('.display-none').click()
+      form.submit()
+      // form.querySelector('.display-none').click()
     })
   })
 }
