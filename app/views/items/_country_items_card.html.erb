@@ -28,8 +28,8 @@
       </div>
       <!-- <div> -->
       <button class="btn dark-button-trip" type="button" aria-haspopup="true" aria-expanded="false">
+      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: 'dark-button-trip-link', remote: true %>
       +
-      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: '', remote: true %>
       </button>
       <!-- </div> -->
     </div>

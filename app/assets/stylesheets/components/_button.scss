@@ -44,6 +44,7 @@
 }
 
 
+
 .dark-button-small {
   color: $cream;
   padding: 7px 20px;
@@ -69,6 +70,7 @@
   border-radius: 50px;
   margin-top: 175%;
   font-weight: bold;
+  position: relative;
   font-size: 12px;
   position: absolute;
   bottom: 0%;
@@ -84,6 +86,21 @@
     text-decoration: none;
   }
 }
+
+.dark-button-trip-link {
+  color: transparent;
+  right: 2px;
+  bottom: -12px;
+  position: absolute;
+
+  &:hover{
+    color: transparent;
+    right: 2px;
+    bottom: -12px;
+    position: absolute;
+  }
+}
+
 
 .trips-button-red {
   color: $cream;
