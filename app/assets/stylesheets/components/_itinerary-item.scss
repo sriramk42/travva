@@ -77,7 +77,7 @@
 .card-body {
   padding: 0px;
   width: 150px;
-  height: 200px;
+  // height: 200px;
 }
 
 .card-body-small {
@@ -163,6 +163,10 @@
 
 
 
+#card-dropdown {
+  border-radius:4px;
+}
 
-
-
+.form-group {
+  margin: 10px !important;
+}

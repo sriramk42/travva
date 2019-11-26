@@ -13,7 +13,7 @@
       <%= f.input :category, collection: Item::CATEGORY %>
       <br>
       <div class="accordion" id="accordionExample">
-        <div class="card" style="border-radius:4px">
+        <div class="card" id="card-dropdown">
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -21,15 +21,13 @@
             </button>
             </h2>
           </div>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="height:500px">
-            <div class="card-body">
-              <%= f.input :url, label: :"Notes", placeholder: "Add some notes, such as url, etc..." %>
-              <%= f.input :time_of_day, collection: Item::TIME_OF_DAY %>
-              <%= f.input :weather, collection: Item::WEATHER %>
-              <%= f.input :rating, collection: 1..5, label: :"Priority" %>
-              <%= f.input :photo %>
-              <%= f.input :photo_cache, as: :hidden %>
-            </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <%= f.input :url, label: :"Notes", placeholder: "Add some notes, such as url, etc..." %>
+            <%= f.input :time_of_day, collection: Item::TIME_OF_DAY %>
+            <%= f.input :weather, collection: Item::WEATHER %>
+            <%= f.input :rating, collection: 1..5, label: :"Priority" %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
           </div>
         </div>
       </div>
@@ -41,4 +39,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
