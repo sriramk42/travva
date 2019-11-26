@@ -25,6 +25,7 @@ gem 'country_select'
 gem 'pundit'
 gem 'classnames-rails-view'
 gem 'rest-client'
+gem 'countries'
 
 
 group :development do

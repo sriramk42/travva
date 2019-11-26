@@ -60,16 +60,19 @@ class ItemsController < ApplicationController
     else
       @city = "Paris"
     end
-    p ENV["API_ACCOUNT"]
     url = "https://www.triposo.com/api/20190906/location.json?tag_labels=city&annotate=trigram:#{@city}&trigram=>=0.3&count=10&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
     response = RestClient.get url
     city_info = JSON.parse(response)
     city_id = city_info["results"][0]["id"]
     @city_name = city_info["results"][0]["name"]
     @city_snippet = city_info["results"][0]["snippet"]
-    @country = city_info["results"][0]["country_id"]
+    countryid = city_info["results"][0]["country_id"]
     @category = "Sightseeing"
 
+    country_code_url = "https://www.triposo.com/api/20190906/location.json?tag_labels=country&fields=name,country_id&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon&count=100"
+    countries_info = JSON.parse(RestClient.get country_code_url)
+    country = countries_info["results"].select { |countryhash| countryhash["country_id"] == countryid }
+    @country = country[0]["name"]
 
     country_code_url = "https://restcountries.eu/rest/v2/name/#{@country}?fullText=true"
     country_info = JSON.parse(RestClient.get country_code_url)
