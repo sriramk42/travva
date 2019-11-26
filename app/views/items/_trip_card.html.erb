@@ -2,7 +2,7 @@
     <% if trip_item.item.photo.present? %>
       <div class="card-picture-small" style="background-image: url(<%= cl_image_path trip_item.item.photo, height: 100, width: 200 %>)">
     <% else %>
-      <div class="card-picture-small <%= trip_item.category.downcase %>">
+      <div class="card-picture-small <%= trip_item.item.category.downcase %>">
     <% end %>
 
       </div>
@@ -15,17 +15,17 @@
         <%= trip_item.item.category.capitalize %>
       </div>
       <div class="card-small-item-rating">
-        <p><% trip_item.item.rating.times do  %>
-            <i class="fas fa-star"></i>
-            <% end %>
-            <% (5 - trip_item.item.rating).times do  %>
-            <i class="far fa-star"></i>
-            <% end %>
-        </p>
-      <button class="btn btn-secondary" type="button" id='<%= "dropdownTripButton#{trip_item.item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      +
-      </button>
-        </div>
+        <% if trip_item.item.rating %>
+          <p><% trip_item.item.rating.times do  %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - trip_item.item.rating).times do  %>
+              <i class="far fa-star"></i>
+              <% end %>
+          </p>
+        <% end %>
+        <button type="button" class="btn dark-button">+</button>
+      </div>
     </div>
     <%= render 'items/trip_card_modal', item: trip_item.item %>
   </div>

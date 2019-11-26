@@ -1,4 +1,12 @@
-<div class="suggestion-card" style="background-image: url(<%= image_path(result['images'][0]['sizes']['medium']['url']) %>)" >
-  <%= result["name"] %>
-  <i class="fas fa-plus"></i>
+<div class="card-index">
+  <div class="card-picture" data-toggle="modal" data-target="#card-item-modal-<%= result['id'] %>" style="background-image: url(<%= image_path(result['images'][0]['sizes']['medium']['url']) %>);background-size: cover; background-position: center;">
+    </div>
+
+
+    <div class="card-body-item d-flex">
+      <div class="card-left">
+        <%= result["name"] %>
+      </div>
+    </div>
+    <%= render 'items/suggestioncard_modal', result: result %>
 </div>

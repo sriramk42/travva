@@ -32,6 +32,12 @@ class TripsController < ApplicationController
       @trip_items = @trip.trip_items
     end
 
+    @markers = @trip_items.map do |trip_item|
+      {
+        lat: trip_item.item.latitude,
+        lng: trip_item.item.longitude
+      }
+    end
   end
 
   def new

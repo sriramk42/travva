@@ -10,5 +10,5 @@ import { dropdownSubmit } from "../plugins/dropsubmit";
 window.$ = window.jQuery = require('jquery');
 
 dropdownSubmit();
-initAutocomplete();
+// initAutocomplete();
 initMapbox();
