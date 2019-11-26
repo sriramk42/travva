@@ -194,4 +194,13 @@ p {
   color: $light-gray;
 }
 
-
+.dropdown-style-items {
+  border: solid 20px #F0E9D7;
+  background-color: #F0E9D7;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #442120;
+  overflow: scroll;
+  -webkit-box-flex: 1;
+  flex: 1;
+}

@@ -7,7 +7,7 @@
     </div>
 
 
-    <div class="card-body-item d-flex">
+    <div class="card-body-item d-flex justify-content-between my-2">
       <div class="card-left">
         <%= item.title.capitalize %>
       </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="dropdown-trip">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id='<%= "dropdownTripButton#{item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn dark-button-small dropdown-toggle" type="button" id='<%= "dropdownTripButton#{item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Add to trip
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id='trip-items-dropdown'>
