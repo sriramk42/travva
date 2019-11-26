@@ -20,4 +20,20 @@ class TripItemsController < ApplicationController
   def destroy
     # To be filled
   end
+
+  def update
+    @trip_item = TripItem.find(params[:id])
+    authorize @trip_item
+    if @trip_item.update(trip_item_params)
+      flash.now[:notice] = 'Item updated'
+    else
+      flash.now[:alert] = 'Could not update this item. Sorry!'
+    end
+  end
+
+  private
+
+  def trip_item_params
+    params.require(:trip_item).permit(:date, :name, :country, :city)
+  end
 end
