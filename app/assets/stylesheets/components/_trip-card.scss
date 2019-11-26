@@ -44,7 +44,10 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  color: $cream;
+  color: $brown;
+  padding: 18px;
+  font-size: 34px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .trip-card p {
@@ -55,9 +58,10 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  font-style: italic;
-  color: $cream;
+  color: $brown;
   font-size: 14px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
 }
 
 .trip-card img {
@@ -65,5 +69,5 @@
   width: 100%;
   object-position: center;
   object-fit: cover;
-  background-image: linear-gradient(rgba(0,0,0,0.3));
+  opacity: 0.3;
 }
