@@ -14,7 +14,7 @@
           <%#= link_to "Add to Bucket List", items_path, method: :post%>
           <%= simple_form_for(Item.new) do |f| %>
           <%= f.input :title, input_html: {id: 'item_title', value: @city_name}, as: :hidden %>
-          <%= f.input :country, input_html: {id: 'item_country', class: 'select2', value: @country_code}, as: :hidden %>
+          <%= f.input :country, input_html: {id: 'item_country', value: @country_code}, as: :hidden %>
           <%= f.input :city, as: :hidden, input_html: {id: 'item_city', value: @city} %>
           <%= f.input :category, selected: "Sightseeing", collection: Item::CATEGORY, as: :hidden, input_html: { value: "Sightseeing" } %>
           <%= f.input :remote_photo_url, as: :hidden, input_html: {value: result['images'][0]['sizes']['original']['url']} %>

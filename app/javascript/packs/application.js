@@ -14,4 +14,6 @@ window.$ = window.jQuery = require('jquery');
 dropdownSubmit();
 // initAutocomplete();
 // initMapbox();
-initSelect2();
+
+const select2Item = document.querySelector('.select2');
+if (select2Item) initSelect2();
