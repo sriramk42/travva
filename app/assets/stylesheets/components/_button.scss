@@ -43,6 +43,26 @@
   }
 }
 
+
+.dark-button-small {
+  color: $cream;
+  padding: 7px 20px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 11px;
+  background: $brown;
+  transition: background 0.1s ease;
+  border: 1px solid $brown;
+
+   &:hover{
+    background: $cream;
+    color: $brown;
+    border-color: $brown;
+    text-decoration: none;
+  }
+}
+
 .dark-button-trip {
   color: $cream;
   padding: none;
