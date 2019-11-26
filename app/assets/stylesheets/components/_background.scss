@@ -3,6 +3,7 @@
   background-attachment: inherit;
   background-size: cover;
   background-position: center;
+  // height: 100%;
   height: 1200px;
   width: 100%;
   background-color: $cream;
@@ -15,9 +16,9 @@
   background-size: cover;
   background-position: center;
   height: 900px;
-  top: 100px;
+  // height: 100%;
   width: 100%;
   background-color: $cream;
   position:relative;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
