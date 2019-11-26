@@ -67,7 +67,13 @@ class ItemsController < ApplicationController
     city_id = city_info["results"][0]["id"]
     @city_name = city_info["results"][0]["name"]
     @city_snippet = city_info["results"][0]["snippet"]
-    country = city_info["results"][0]["country_id"]
+    @country = city_info["results"][0]["country_id"]
+    @category = "Sightseeing"
+
+
+    country_code_url = "https://restcountries.eu/rest/v2/name/#{@country}?fullText=true"
+    country_info = JSON.parse(RestClient.get country_code_url)
+    @country_code = country_info[0]["alpha2Code"]
 
     url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{city_id}&tag_labels=sightseeing&count=60&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
     response = RestClient.get url
@@ -80,7 +86,10 @@ class ItemsController < ApplicationController
       }
     end
 
-    @trips = Trip.future.where(destination: country)
+    # @trips = Trip.future.where(destination: country)
+  end
+
+  def suggestions_create
   end
 
   private
@@ -91,7 +100,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache)
+    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache, :remote_photo_url)
   end
 
   def search_params
