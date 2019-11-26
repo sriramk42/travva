@@ -34,7 +34,7 @@
           </div>
         <% end %>
       </div>
-      <div class="items-container">
+      <div class="small-items-container">
         <div class="col-3 override_col">
           <div class="cards-small-item">
             <% @trip_items.each do |item| %>
@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="map-container-show-page" id="map" style="height: 100vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" %>"></div>
+    <div class="map-container-show-page" id="map" style="height: 90vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" %>"></div>
 
   </div>
 </div>
