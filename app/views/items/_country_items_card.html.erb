@@ -22,10 +22,10 @@
             <i class="far fa-star"></i>
             <% end %>
         </p>
-
-      <div class="modal-footer">
-        <button type="button" class="btn dark-button">+</button>
-      </div>
+      <button class="btn btn-secondary" type="button" aria-haspopup="true" aria-expanded="false">
+      +
+      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: '' %>
+      </button>
         </div>
     </div>
     <%= render 'items/trip_card_modal', item: item %>

@@ -22,10 +22,9 @@
             <i class="far fa-star"></i>
             <% end %>
         </p>
-
-      <div class="modal-footer">
-        <button type="button" class="btn dark-button">+</button>
-      </div>
+      <button class="btn btn-secondary" type="button" id='<%= "dropdownTripButton#{trip_item.item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      +
+      </button>
         </div>
     </div>
     <%= render 'items/trip_card_modal', item: trip_item.item %>

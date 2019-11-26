@@ -23,6 +23,10 @@
               <% end %>
           </p>
         </div>
+        <button class="btn btn-secondary" type="button" id='<%= "dropdownTripButton#{trip_item.item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        +
+        <%= link_to trip.name, trip_trip_items_path(trip, item: item), method: :post, class: 'dropdown-item', remote: true %>
+        </button>
     </div>
     <%= render 'items/card_modal', item: item %>
   </div>
