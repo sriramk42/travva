@@ -1,6 +1,8 @@
 <div class="card-index">
-  <div class="card-picture" data-toggle="modal" data-target="#card-item-modal-<%= result['id'] %>" style="background-image: url(<%= image_path(result['images'][0]['sizes']['medium']['url']) %>);background-size: cover; background-position: center;">
+  <% if result['images'].any? %>
+    <div class="card-picture" data-toggle="modal" data-target="#card-item-modal-<%= result['id'] %>" style="background-image: url(<%= image_path(result['images'][0]['sizes']['medium']['url']) %>);background-size: cover; background-position: center;">
     </div>
+  <% end %>
 
 
     <div class="card-body-item d-flex">

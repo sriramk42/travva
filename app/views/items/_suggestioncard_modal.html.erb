@@ -13,8 +13,10 @@
           <p><%= result["snippet"] %></p>
         </div>
         <div class="m-2 p-2">
-          <p><%= image_tag result['images'][0]['sizes']['medium']['url'], height: 300, width: 400, crop: :fit %></p>
-          </div>
+          <% if result['images'].any? %>
+            <p><%= image_tag result['images'][0]['sizes']['medium']['url'], height: 300, width: 400, crop: :fit %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
