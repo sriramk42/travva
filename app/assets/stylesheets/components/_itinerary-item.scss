@@ -6,8 +6,10 @@
 
 .cards-small-item {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .cards-trip-item {
@@ -105,15 +107,12 @@
 }
 
 .card-index-small {
-  border: solid 15px $cream;
-  background-color: $cream;
+  border: solid 15px transparent;
+  background-color: rgba($brown, .7);
   border-radius: 4px;
   display: flex;
   height: 150px;
-  width: 350px;
-}
-
-.card-index-small {
+  width: 100%;
   position: relative;
 }
 
@@ -126,14 +125,14 @@
   text-align: right;
   font-weight: bold;
   font-size: 14px;
-  color: $brown;
+  color: $cream;
 }
 
 .card-category-small {
   text-align: right;
   font-size: 10px;
   font-style: italic;
-  color: $brown;
+  color: $cream;
 }
 
 .card-small-item-rating {
@@ -142,7 +141,7 @@
 }
 
 .card-picture-medium {
-  width: 150px;
+  width: 125px;
   height: 100%;
   background-size: cover;
   border-radius: 4px;
@@ -154,18 +153,13 @@
 }
 
 .card-index-medium {
-  border: solid 15px $cream;
-  background-color: $cream;
+  border: solid 15px transparent;
+  background-color: rgba($brown, .7);
   border-radius: 4px;
   display: flex;
-  height: 150px;
-  width: 350px;
-}
-
-.card-index-medium {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 275px;
+  height: 200px;
 }
 
 
@@ -178,7 +172,7 @@
   text-align: right;
   font-weight: bold;
   font-size: 14px;
-  color: $brown;
+  color: $cream;
 }
 
 
@@ -186,7 +180,7 @@
   text-align: right;
   font-size: 10px;
   font-style: italic;
-  color: $brown;
+  color: $cream;
 }
 
 .card-medium-item-rating {

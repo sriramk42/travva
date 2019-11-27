@@ -1,3 +1,42 @@
+
+<div class="draggable-droppable">
+  <div class="box-1">
+    <span>a</span>
+  </div>
+</div>
+
+<div class="draggable-droppable">
+  <div class="box-2">
+    <span>b</span>
+  </div>
+</div>
+
+<div class="draggable-droppable">
+  <div class="box-3">
+    <span>c</span>
+  </div>
+</div>
+
+<div class="draggable-droppable">
+  <div class="box-4">
+    <span>d</span>
+  </div>
+</div>
+
+ <div class="draggable-droppable">
+  <div class="box-5">
+    <span>e</span>
+  </div>
+</div>
+
+<div class="draggable-droppable">
+  <div class="box-6">
+    <span>f</span>
+  </div>
+</div>
+
+
+
 <div class="trips-show-container">
   <div class="app">
 
@@ -35,8 +74,8 @@
         <% end %>
       </div>
       <div class="small-items-container">
-        <div class="col-3 override_col">
-          <div class="cards-small-item">
+        <div class="override_col">
+          <div class="cards-small-item draggable-items">
             <% @trip_items.each do |item| %>
               <%= render 'items/trip_card', trip_item: item %>
             <% end %>
