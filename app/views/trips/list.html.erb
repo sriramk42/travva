@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row align-items-center">
+    <h1><%= @trip.name %></h1>
+    <h2><%= @trip.destination %></h2>
+    <p>From: <%= @trip.start_date %> To: <%= @trip.end_date %> </p>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <% @dates.each do |date| %>
+        <% @trip_items = @trip_items.where(date: Date.parse(date)) %>
+        <p><%= date.strftime("%A, %d/%m/%Y")%></p>
+        <% @trip_items.each do |trip_item| %>
+          <%= trip_item.item.name %>
+          <%= trip_item.item.category %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

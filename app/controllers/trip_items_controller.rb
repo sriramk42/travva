@@ -11,6 +11,17 @@ class TripItemsController < ApplicationController
 
     authorize @trip_item
       if @trip_item.save
+        if @trip_item.date
+          @trip_items = @trip_item.trip.trip_items.where(date: @trip_item.date)
+        else
+          @trip_items = @trip_item.trip.trip_items
+        end
+        @markers = @trip_items.map do |trip_item|
+          {
+            lat: trip_item.item.latitude,
+            lng: trip_item.item.longitude
+          }
+        end
         flash.now[:notice] = 'Item correctly added to your trip'
       else
         flash.now[:alert] = 'You have already added this item'
