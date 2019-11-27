@@ -53,6 +53,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy
+    redirect_to items_path
   end
 
   def suggestions
