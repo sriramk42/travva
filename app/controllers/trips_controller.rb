@@ -59,12 +59,20 @@ class TripsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    if @trip.update(trip_params)
+      redirect_to trips_path(@trip)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @trip.destroy
+    redirect_to trips_path
   end
 
   private

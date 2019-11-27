@@ -1,0 +1,12 @@
+<h1 class="text-center mb-3">Update <%= @trip.name %></h1>
+<div class="row mt-3 justify-content-center pt-3">
+      <div class="col-6">
+          <%= simple_form_for (@trip) do |f| %>
+            <%= f.input :destination, as: :country, label: :"Country", input_html: {class: 'select2'}%>
+            <%= f.input :name, label: :"Trip's name", placeholder: "Eg: Honeymoon, First trip together, ..." %>
+            <%= f.input :start_date, as: :string, input_html: { id: "start_date" } %>
+            <%= f.input :end_date, as: :string, input_html: { id: "end_date" } %>
+            <%= f.button :submit, class: "light-button"%>
+          <% end %>
+      </div>
+  </div>

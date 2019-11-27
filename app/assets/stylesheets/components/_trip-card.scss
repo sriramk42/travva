@@ -10,9 +10,8 @@
   background-color: $cream;
   background-clip: border-box;
   border-radius: 4px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 25px;
-  opacity: .8;
 }
 
 .no-trip-card h2 {
@@ -22,7 +21,6 @@
 .trip-card {
   position: relative;
   display: -webkit-box;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
@@ -31,9 +29,9 @@
   background-color: $cream;
   background-clip: border-box;
   border-radius: 4px;
-  margin-top: 10px;
-  padding: 25px;
-  opacity: none;
+  margin-top: 20px;
+  padding: 15px;
+  padding-left: 290px;
 }
 
 .trip-card h2 {
@@ -45,10 +43,12 @@
   min-width: 0;
   word-wrap: break-word;
   color: $brown;
-  padding-top: 20px;
-  font-size: 28px;
-  text-shadow: 3px 3px 7px rgba($cream, 1);
+  padding: 18px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
 
 .trip-card p {
   display: -webkit-box;
@@ -62,6 +62,7 @@
   font-size: 14px;
   text-shadow: 3px 3px 7px rgba($cream, 1);
   font-weight: bold;
+  padding-bottom: 10px;
 }
 
 .trip-card img {
@@ -69,5 +70,18 @@
   width: 100%;
   object-position: center;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.9;
+}
+
+.trip-card a {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  padding: 1.25rem;
+  width: 300px;
+  transition: all 0.5s;
 }

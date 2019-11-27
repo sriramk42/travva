@@ -1,0 +1,43 @@
+<div class="container mt-3 p-5">
+  <div class="row text-center mt-3 justify-content-center pt-3">
+    <div class="col-6">
+      <h1 class="text-center mb-3">Update <%= @item.title %></h1>
+    </div>
+  </div>
+  <div class="row mt-3 justify-content-center pt-3">
+    <div class="col-6">
+      <%= simple_form_for(@item) do |f| %>
+      <%= f.input :address, label: :"Address", input_html: {id: 'item_address'} %>
+      <%= f.input :title, label: :"Name", input_html: {id: 'item_title'} %>
+      <%= f.input :country, input_html: {id: 'item_country'} %>
+      <%= f.input :city, input_html: {id: 'item_city'} %>
+      <%= f.input :category, collection: Item::CATEGORY %>
+      <br>
+      <div class="accordion" id="accordionExample">
+        <div class="card" id="card-dropdown">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fas fa-plus"></i> Add more infos (optional)
+            </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <%= f.input :url, label: :"Notes", placeholder: "Add some notes, such as url, etc..." %>
+            <%= f.input :time_of_day, collection: Item::TIME_OF_DAY %>
+            <%= f.input :weather, collection: Item::WEATHER %>
+            <%= f.input :rating, collection: 1..5, label: :"Priority" %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="button_create">
+        <%= f.button :submit, id:"sweet-alert-demo", class: "light-button"%>
+        <%= link_to "", items_path, method: :post, id: "submit-link", class: "hidden" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
