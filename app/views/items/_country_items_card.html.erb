@@ -17,7 +17,7 @@
       <div class="card-medium-item-rating">
         <p>
           <% if item.rating %>
-            <% item.rating.times do  %>
+            <% item.rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - item.rating).times do  %>
@@ -27,10 +27,11 @@
         </p>
       </div>
       <!-- <div> -->
+      <%= link_to trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: 'dark-button-trip-link', remote: true do %>
       <button class="btn dark-button-trip" type="button" aria-haspopup="true" aria-expanded="false">
-      <%= link_to @trip.name, trip_trip_items_path(@trip, item: item, date: @date), method: :post, class: 'dark-button-trip-link', remote: true %>
       +
       </button>
+      <% end %>
       <!-- </div> -->
     </div>
     <%= render 'items/trip_card_modal', item: item %>
