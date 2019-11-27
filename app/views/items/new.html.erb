@@ -1,9 +1,13 @@
 <div class="container mt-3 p-5">
-  <h1 class="text-center mb-3">
-  <%= simple_form_for(@item) do |f| %>
-  <%= f.input :address, label: :"Which place do you want to save?", input_html: {id: 'item_address'} %>
-  <% end %>
-  </h1>
+  <div class="row text-center mt-3 justify-content-center pt-3">
+    <div class="col-6">
+      <h1>
+      <%= simple_form_for(@item) do |f| %>
+      <%= f.input :address, label: :"Which place do you want to save?", input_html: {id: 'item_address'} %>
+      <% end %>
+      </h1>
+    </div>
+  </div>
   <div class="row mt-3 justify-content-center pt-3">
     <div class="col-6">
       <%= simple_form_for(@item) do |f| %>
