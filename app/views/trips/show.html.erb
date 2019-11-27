@@ -1,44 +1,8 @@
-
-<div class="draggable-droppable">
-  <div class="box-1">
-    <span>a</span>
-  </div>
-</div>
-
-<div class="draggable-droppable">
-  <div class="box-2">
-    <span>b</span>
-  </div>
-</div>
-
-<div class="draggable-droppable">
-  <div class="box-3">
-    <span>c</span>
-  </div>
-</div>
-
-<div class="draggable-droppable">
-  <div class="box-4">
-    <span>d</span>
-  </div>
-</div>
-
- <div class="draggable-droppable">
-  <div class="box-5">
-    <span>e</span>
-  </div>
-</div>
-
-<div class="draggable-droppable">
-  <div class="box-6">
-    <span>f</span>
-  </div>
-</div>
-
-
-
 <div class="trips-show-container">
-  <div class="app">
+  <button>Test</button>
+
+  <button id="hide-button">Hide</button>
+  <div class="app" id="hide-items">
 
     <div class="d-flex">
       <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
@@ -75,8 +39,8 @@
       </div>
       <div class="small-items-container">
         <div class="override_col">
-          <div class="cards-small-item draggable-items">
-            <% @trip_items.each do |item| %>
+          <div class="cards-small-item draggable-items" data-trips-item-update-path="<%= trip_path(@trip) %>">
+            <% @trip_items.order(date: :asc, order: :asc).each do |item| %>
               <%= render 'items/trip_card', trip_item: item %>
             <% end %>
           </div>

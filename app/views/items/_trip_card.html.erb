@@ -1,4 +1,4 @@
-  <div class="card-index-small" data-toggle="modal" data-target="#card-small-item-modal-<%= trip_item.id %>">
+  <div class="card-index-small" data-toggle="modal" data-target="#card-small-item-modal-<%= trip_item.id %>" data-order="<%= trip_item.order %>">
     <% if trip_item.item.photo.present? %>
     <div class="card-picture-small" style="background-image: url(<#%= cl_image_path trip_item.item.photo, height: 100, width: 200 %>)">
       <% else %>
@@ -10,6 +10,9 @@
       <div class="card-body-small-item">
         <div class="card-title-small">
           <%= trip_item.item.title.capitalize %>
+        </div>
+        <div class="card-title-small">
+        <%= trip_item.order %>
         </div>
         <div class="card-category-small">
           <%= trip_item.item.category.capitalize %>
@@ -35,8 +38,12 @@
           </p>
           <% end %>
         </div>
+        <center>
+          <%= link_to trip_item_path(trip_item), method: :delete do%>
+          <i class=“far trash fa-trash-alt”>Delete</i>
+          <% end %>
+        </center>
       </div>
-
     <%= render 'items/trip_card_modal', item: trip_item.item %>
   </div>
 
