@@ -198,17 +198,16 @@
   font-size: 12px;
 }
 
+.trash {
+  color: $brown !important;
+  font-size: 18px !important;
+}
 
 .card-index {
   &:hover{
     cursor: pointer;
   }
 }
-
-.dropdown-trip {
-  text-align: right;
-}
-
 
 
 #card-dropdown {
