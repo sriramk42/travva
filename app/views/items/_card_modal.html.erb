@@ -10,14 +10,18 @@
       </div>
       <div class="d-flex">
         <div class="modal-body">
-          <p>Address: <%= item.address %></p>
-          <p>City: <%= item.city %></p>
-          <p>Country: <%= item.country %></p>
-          <p>Category: <%= item.category.capitalize %></p>
-          <p>Time of day: <%= item.time_of_day %></p>
-          <p>Weather: <%= item.weather %></p>
-          <% if item.rating %>
-          <p>Rating: <% item.rating.times do  %>
+          <p><strong>Address:</strong> <%= item.address %></p>
+          <p><strong>City:</strong> <%= item.city %></p>
+          <p><strong>Country:</strong> <%= item.country %></p>
+          <p><strong>Category:</strong> <%= item.category.capitalize %></p>
+          <% if item.time_of_day.present? %>
+            <p><strong>Time of day:</strong> <%= item.time_of_day %></p>
+          <% end %>
+          <% if item.weather.present? %>
+            <p><strong>Weather:</strong> <%= item.weather %></p>
+          <% end %>
+          <% if item.rating.present? %>
+          <p><strong>Rating:</strong> <% item.rating.times do  %>
             <i class="fas fa-star"></i>
             <% end %>
             <% (5 - item.rating).times do  %>
@@ -28,7 +32,7 @@
         </div>
         <div class="m-2 p-2">
           <p><%= cl_image_tag item.photo, height: 300, width: 400, crop: :fill %></p>
-          </div>
+        </div>
       </div>
     </div>
   </div>
