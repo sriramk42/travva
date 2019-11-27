@@ -13,12 +13,14 @@
           <p><%= result["snippet"] %></p>
           <%#= link_to "Add to Bucket List", items_path, method: :post%>
           <%= simple_form_for(Item.new) do |f| %>
-          <%= f.input :title, input_html: {id: 'item_title', value: @city_name}, as: :hidden %>
+          <%= f.input :title, input_html: {id: 'item_title', value: result["name"]}, as: :hidden %>
           <%= f.input :country, input_html: {id: 'item_country', value: @country_code}, as: :hidden %>
           <%= f.input :city, as: :hidden, input_html: {id: 'item_city', value: @city} %>
           <%= f.input :category, selected: "Sightseeing", collection: Item::CATEGORY, as: :hidden, input_html: { value: "Sightseeing" } %>
+          <%= f.input :latitude, as: :hidden, input_html: { value: result["coordinates"]["latitude"] } %>
+          <%= f.input :longitude, as: :hidden, input_html: { value: result["coordinates"]["longitude"] } %>
           <%= f.input :remote_photo_url, as: :hidden, input_html: {value: result['images'][0]['sizes']['original']['url']} %>
-          <%= f.submit 'Add to Bucket List' %>
+          <%= f.submit 'Add to Bucket List', class: "dark-button" %>
           <% end %>
         </div>
         <div class="m-2 p-2">

@@ -8,4 +8,6 @@ var content = "<%= j render 'items/trip_card', trip_item: @trip_item %>"
 if (newDayItem) {
   newDayItem.insertAdjacentHTML('beforeend', content);
 }
+document.querySelector("#map").dataset.markers = '<%= @markers.to_json.html_safe %>';
+buildMap();
 <% end %>

@@ -59,21 +59,34 @@ class TripsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
-    @trip.trip_items.each do |trip_item|
-      if trip_item.order == params[:new].to_i
-        trip_item.order = params[:old].to_i
-        trip_item.save!
-      elsif trip_item.order == params[:old].to_i
-        trip_item.order = params[:new].to_i
-        trip_item.save!
+    
+    if params[:new] && params[:old]   # coming from sortable, do not delete
+      @trip.trip_items.each do |trip_item|
+        if trip_item.order == params[:new].to_i
+          trip_item.order = params[:old].to_i
+          trip_item.save!
+        elsif trip_item.order == params[:old].to_i
+          trip_item.order = params[:new].to_i
+          trip_item.save!
+        end
       end
     end
+    
+    if @trip.update(trip_params)
+      redirect_to trips_path(@trip)
+    else
+      render :edit
+    end
+    
   end
 
   def destroy
+    @trip.destroy
+    redirect_to trips_path
   end
 
   private
