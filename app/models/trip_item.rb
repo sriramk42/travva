@@ -6,7 +6,7 @@ class TripItem < ApplicationRecord
   before_destroy :delete_order_number
 
   def assign_order_number
-    if trip.trip_items.any?
+    if trip.trip_items.where(date: date).any?
       self.order = trip.trip_items.where(date: date).order(order: :asc).last.order + 1
     else
       self.order = 1
