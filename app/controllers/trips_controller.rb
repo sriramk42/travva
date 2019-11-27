@@ -63,7 +63,7 @@ class TripsController < ApplicationController
   end
 
   def update
-    
+
     if params[:new] && params[:old]   # coming from sortable, do not delete
       @trip.trip_items.each do |trip_item|
         if trip_item.order == params[:new].to_i
@@ -75,13 +75,13 @@ class TripsController < ApplicationController
         end
       end
     end
-    
+
     if @trip.update(trip_params)
       redirect_to trips_path(@trip)
     else
       render :edit
     end
-    
+
   end
 
   def destroy
