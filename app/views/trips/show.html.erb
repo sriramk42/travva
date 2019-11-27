@@ -1,6 +1,8 @@
 <div class="trips-show-container">
   <button>Test</button>
-  <div class="app">
+
+  <button id="hide-button">Hide</button>
+  <div class="app" id="hide-items">
 
     <div class="d-flex">
       <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
