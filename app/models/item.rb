@@ -10,6 +10,10 @@ class Item < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   after_validation :set_country_name, if: :will_save_change_to_country?
 
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
+
+
   # CATEGORY = Item.select(:category).map(&:category).uniq.reject(&:blank?).map(&:capitalize)
   CATEGORY = ['Sport', 'Sightseeing', 'Food', 'Music', 'Museum', 'Relax and Rejuvenate', 'Shopping', 'Culture', 'Religion']
   COUNTRY = Item.select(:country).map(&:country).uniq.reject(&:blank?).map(&:capitalize)

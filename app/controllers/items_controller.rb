@@ -81,7 +81,7 @@ class ItemsController < ApplicationController
     # country_info = JSON.parse(RestClient.get country_code_url)
     # @country_code = country_info[0]["alpha2Code"]
 
-    url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{city_id}&tag_labels=sightseeing&count=60&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
+    url = "https://www.triposo.com/api/20190906/poi.json?location_id=#{city_id}&tag_labels=sightseeing&count=30&order_by=-score&account=VE4X2F8O&token=s7g0roq9ibxhev3tml0wej8w5ul4reon"
     response = RestClient.get url
     @repos = JSON.parse(response)
 
@@ -106,7 +106,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache, :remote_photo_url)
+    params.require(:item).permit(:title, :url, :address, :time_of_day, :weather, :category, :price, :country, :city, :rating, :user_id, :photo, :photo_cache, :remote_photo_url, :latitude, :longitude)
   end
 
   def search_params
