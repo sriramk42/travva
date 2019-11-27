@@ -62,6 +62,15 @@ class TripsController < ApplicationController
   end
 
   def update
+    @trip.trip_items.each do |trip_item|
+      if trip_item.order == params[:new].to_i
+        trip_item.order = params[:old].to_i
+        trip_item.save!
+      elsif trip_item.order == params[:old].to_i
+        trip_item.order = params[:new].to_i
+        trip_item.save!
+      end
+    end
   end
 
   def destroy
@@ -75,6 +84,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:name, :start_date, :end_date, :user_id, :destination)
+    params.require(:trip).permit(:name, :start_date, :end_date, :user_id, :destination, :new, :old)
   end
 end

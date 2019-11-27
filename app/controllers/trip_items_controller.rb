@@ -18,7 +18,10 @@ class TripItemsController < ApplicationController
     end
 
   def destroy
-    # To be filled
+    @trip_item = TripItem.find(params[:id])
+    @trip_item.destroy
+    authorize @trip_item
+    redirect_to trip_path(@trip_item.trip)
   end
 
   def update
