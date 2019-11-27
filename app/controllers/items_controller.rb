@@ -39,7 +39,8 @@ class ItemsController < ApplicationController
     authorize @item
     @item.user = current_user
     if @item.save
-      redirect_to items_path
+      path = URI(request.referer).path == suggestions_path ? suggestions_path : items_path
+      redirect_to path
     else
       render :new
     end
