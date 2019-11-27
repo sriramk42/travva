@@ -18,7 +18,7 @@
           <% end %>
         <% end %>
       <% else %>
-          <center><h2 class="trip-card">You're not on a trip right now! <%= link_to "Why don't you plan one?", new_trip_path %></h2></center>
+          <center><h2 class="no-trip-card">You're not on a trip right now! <%= link_to "Why don't you plan one?", new_trip_path %></h2></center>
       <% end %>
     </div>
     <div class="<%= panes_classe('future', @target_tab) %>" id="2">
@@ -29,7 +29,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <center><h2 class="trip-card">You don't have any upcoming trips! <%= link_to "Feel like planning one?", new_trip_path %></h2></center>
+        <center><h2 class="no-trip-card">You don't have any upcoming trips! <%= link_to "Feel like planning one?", new_trip_path %></h2></center>
       <% end %>
     </div>
     <div class="<%= panes_classe('past', @target_tab) %>" id="3">
@@ -40,7 +40,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <center><h2 class="trip-card">We don't have any records of your past trips!</h2></center>
+        <center><h2 class="no-trip-card">We don't have any records of your past trips!</h2></center>
       <% end %>
     </div>
   </div>
