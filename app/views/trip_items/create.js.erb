@@ -3,7 +3,7 @@ $('<%= "#dropdownTripButton#{@item_id}" %>').dropdown('toggle');
 
 
 <% if @trip_item.persisted? %>
-var newDayItem = document.querySelector('.cards-small-item')
+var newDayItem = document.querySelector('.cards-small-item', '.draggable-items')
 var content = "<%= j render 'items/trip_card', trip_item: @trip_item %>"
 if (newDayItem) {
   newDayItem.insertAdjacentHTML('beforeend', content);
@@ -11,4 +11,3 @@ if (newDayItem) {
 document.querySelector("#map").dataset.markers = '<%= @markers.to_json.html_safe %>';
 buildMap();
 <% end %>
-

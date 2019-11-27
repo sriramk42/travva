@@ -1,3 +1,4 @@
+import Rails from "@rails/ujs";
 import "bootstrap";
 // import "mapbox-gl/dist/mapbox-gl.css"; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import "plugins/flatpickr";
@@ -9,6 +10,8 @@ import { initSweetalert } from "../plugins/init_sweetalert";
 import { dropdownSubmit } from "../plugins/dropsubmit";
 import { initSelect2 } from '../plugins/init_select2';
 import { initSortable } from '../plugins/init_sortable';
+
+Rails.start();
 
 window.$ = window.jQuery = require('jquery');
 
