@@ -1,4 +1,6 @@
 require 'active_support/core_ext'
+gem 'countries', require: 'countries/global'
+
 class TripsController < ApplicationController
 
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
@@ -60,7 +62,8 @@ class TripsController < ApplicationController
   end
 
   def edit
-
+    c = ISO3166::Country.find_country_by_name(@trip.destination)
+    @country_code = c.alpha2
   end
 
   def update
@@ -77,7 +80,9 @@ class TripsController < ApplicationController
       end
     end
 
-    if @trip.update(trip_params)
+
+    if @trip.attributes = trip_params
+      @trip.save
       redirect_to trips_path(@trip)
     else
       render :edit

@@ -47,6 +47,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    c = ISO3166::Country.find_country_by_name(@item.country)
+    @country_code = c.alpha2
   end
 
   def update

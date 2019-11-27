@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
   scope :future, -> { where('start_date > ?', Date.today) }
   scope :current, -> { where('? BETWEEN start_date AND end_date', Date.today) }
 
-  after_validation :set_country_name, if: :will_save_change_to_name?
+  after_validation :set_country_name, if: :will_save_change_to_destination?
   after_validation :set_photo
 
   private

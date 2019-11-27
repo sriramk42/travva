@@ -9,7 +9,7 @@
       <%= simple_form_for(@item) do |f| %>
       <%= f.input :address, label: :"Address", selected: @item.address ,input_html: {id: 'item_address'} %>
       <%= f.input :title, label: :"Name", input_html: {id: 'item_title'} %>
-      <%= f.input :country, input_html: {id: 'item_country'} %>
+      <%= f.input :country, selected: @country_code, input_html: {id: 'item_country'} %>
       <%= f.input :city, input_html: {id: 'item_city'} %>
       <%= f.input :category, collection: Item::CATEGORY %>
       <br>
