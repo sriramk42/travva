@@ -8,7 +8,10 @@
       <p> Date: <%= date_trip[0] %> </p>
       <% date_trip[1].each do |titem| %>
         <% if titem.present? %>
+        <div class="row">
           <%= titem[0].item.title %>
+          <%= titem[0].item.category %>
+        </div>
         <% end %>
       <% end %>
     <% end %>
