@@ -10,6 +10,7 @@ import { initSweetalert } from "../plugins/init_sweetalert";
 import { dropdownSubmit } from "../plugins/dropsubmit";
 import { initSelect2 } from '../plugins/init_select2';
 import { initSortable } from '../plugins/init_sortable';
+import { hideItem } from "../components/toggle_items";
 
 Rails.start();
 
@@ -22,3 +23,8 @@ dropdownSubmit();
 
 const select2Item = document.querySelector('.select2');
 if (select2Item) initSelect2();
+
+hideItem();
+
+
+
