@@ -67,6 +67,23 @@ class TripsController < ApplicationController
   def destroy
   end
 
+  def review
+    require 'active_support/core_ext'
+
+    @trip = Trip.find(params[:trip_id])
+    @trip_items = @trip.trip_items
+    @dates = (@trip.start_date..@trip.end_date).to_a
+    authorize @trip
+
+    @date_trip_hash = Hash.new
+    @dates.each do |tdate|
+      @date_trip_hash[tdate] = Array.new
+      @date_trip_hash[tdate] << @trip_items.select do |trip_item|
+        trip_item.date.to_date == tdate
+      end
+    end
+  end
+
   private
 
   def set_trip

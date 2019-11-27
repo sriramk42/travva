@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :trip_items, only: :create
+    get 'review', to: 'trips#review', as: :review
   end
 
   resources :trip_items, only: [:destroy, :update]
