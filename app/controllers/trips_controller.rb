@@ -1,4 +1,6 @@
+require 'active_support/core_ext'
 class TripsController < ApplicationController
+
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +9,6 @@ class TripsController < ApplicationController
     @future_trips = @trips.future
     @current_trips = @trips.current
     @target_tab = params[:target_tab] || 'current'
-
   end
 
   def show
@@ -90,8 +91,6 @@ class TripsController < ApplicationController
   end
 
   def review
-    require 'active_support/core_ext'
-
     @trip = Trip.find(params[:trip_id])
     @trip_items = @trip.trip_items
     @dates = (@trip.start_date..@trip.end_date).to_a
