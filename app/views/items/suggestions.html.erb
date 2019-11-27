@@ -3,7 +3,7 @@
     <%= simple_form_for :search, url: suggestions_path, method:'GET', html: {class: 'form-inline'} do |f| %>
             <%= f.input :city, label: 'Enter city name:', required: true, input_html: {class: "search-input p-2 m-2"} %>
             <%#= f.input :category, label: 'Choose category:', collection: ["sightseeing", "museums", "shopping", "eatingout", "relaxinapark"] required: false, input_html: {class: "search-input p-2 m-2"} %>
-            <%= f.submit "Search", class: "btn btn-primary btn-search ml-2" %>
+            <%= f.submit "Search", class: "btn dark-button ml-2" %>
             <% end %>
   </div>
   <div class="row">

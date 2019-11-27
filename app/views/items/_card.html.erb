@@ -1,11 +1,10 @@
 <div class="card-index">
   <% if item.photo.present? %>
-  <div class="card-picture" data-toggle="modal" data-target="#card-item-modal-<%= item.id %>" style="background-image: url(<#%= cl_image_path item.photo, height: 200, width: 300 %>)">
-    <% else %>
+    <div class="card-picture" data-toggle="modal" data-target="#card-item-modal-<%= item.id %>" style="background-image: url(<%= cl_image_path item.photo, height: 200, width: 300 %>)"></div>
+  <% else %>
     <div class="card-picture <%= item.category.downcase %>"  data-toggle="modal" data-target="#card-item-modal-<%= item.id %>">
-      <% end %>
     </div>
-
+  <% end %>
 
     <div class="card-body-item d-flex justify-content-between my-2">
       <div class="card-left">
@@ -27,7 +26,7 @@
       </div>
     </div>
     <div class="dropdown-trip">
-      <button class="btn dark-button-small dropdown-toggle" type="button" id='<%= "dropdownTripButton#{item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn dark-button-small-item dropdown-toggle" type="button" id='<%= "dropdownTripButton#{item.id}" %>' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Add to trip
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id='trip-items-dropdown'>
