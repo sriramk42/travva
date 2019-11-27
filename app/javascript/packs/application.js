@@ -8,9 +8,11 @@ import { home } from "../home/home";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { dropdownSubmit } from "../plugins/dropsubmit";
 import { initSelect2 } from '../plugins/init_select2';
+import { initSortable } from '../plugins/init_sortable';
 
 window.$ = window.jQuery = require('jquery');
 
+initSortable();
 dropdownSubmit();
 // initAutocomplete();
 // initMapbox();

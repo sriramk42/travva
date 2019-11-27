@@ -46,20 +46,21 @@
 
 
 .dark-button-small {
-  color: $cream;
+  color: $brown;
   padding: 7px 20px;
   border-radius: 4px;
   margin-top: 8px;
   font-weight: bold;
   font-size: 11px;
-  background: $brown;
+  background: $cream;
   transition: background 0.1s ease;
-  border: 1px solid $brown;
+  border: 1px solid $cream;
 
    &:hover{
     background: $cream;
     color: $brown;
-    border-color: $brown;
+    border-color: $cream;
+    opacity: .7;
     text-decoration: none;
   }
 }
