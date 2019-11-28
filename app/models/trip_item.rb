@@ -4,6 +4,8 @@ class TripItem < ApplicationRecord
   validates_uniqueness_of :trip, scope: [:date, :item]
   before_create :assign_order_number
   before_destroy :delete_order_number
+  after_validation :assign_order_number, if: :will_save_change_to_date?
+
 
   def assign_order_number
     if trip.trip_items.where(date: date).any?
