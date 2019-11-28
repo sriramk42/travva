@@ -97,14 +97,14 @@ class TripsController < ApplicationController
 
   def review
     @trip = Trip.find(params[:trip_id])
-    @trip_items = @trip.trip_items
+    trip_items = @trip.trip_items.where.not(date: nil)
     @dates = (@trip.start_date..@trip.end_date).to_a
     authorize @trip
 
     @date_trip_hash = Hash.new
     @dates.each do |tdate|
       @date_trip_hash[tdate] = Array.new
-      @date_trip_hash[tdate] << @trip_items.select do |trip_item|
+      @date_trip_hash[tdate] << trip_items.select do |trip_item|
         trip_item.date.to_date == tdate
       end
     end
