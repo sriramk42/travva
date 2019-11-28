@@ -1,9 +1,9 @@
 <div class="trips-show-container">
-  <button>Test</button>
 
-  <button id="hide-button">Hide</button>
+  <%= link_to "My trip", trip_review_path(@trip), class: "btn dark-button"%>
+
+  <button id="hide-button" class="btn dark-button">My items</button>
   <div class="app" id="hide-items">
-
     <div class="d-flex">
       <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
         <%= hidden_field_tag 'search[date]', params[:search][:date] if params[:search] %>
