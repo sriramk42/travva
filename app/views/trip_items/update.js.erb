@@ -1,3 +1,17 @@
 
-document.querySelector('.card-order-number').innerHTML = "<%= j render 'shared/flashes' %>"
-$('<%= "#dropdownTripButton#{@item_id}" %>').dropdown('toggle');
+function refreshCard(innerHTML) {
+  const newCardOrder = document.querySelector('.card-order-number');
+  newCardOrder.insertAdjacentHTML('beforeend', innerHTML);
+}
+
+function emptyCardContainer() {
+  const newCardOrder = document.querySelector('.card-order-number');
+  newCardOrder.innerHTML = "";
+}
+
+<% unless @review.errors.any? %>
+  emptyCardContainer();
+  <% @trip_item.trip.trip_items.order(date: :asc, order: :asc).each do |item| %>
+    refreshForm('<%= j  render "items/trip_card", trip_item: item %>');
+  <% end %>
+<% end %>

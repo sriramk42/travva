@@ -39,7 +39,7 @@
       </div>
       <div class="small-items-container">
         <div class="override_col">
-          <div class="cards-small-item draggable-items" data-trips-item-update-path="<%= trip_path(@trip) %>">
+          <div class="cards-small-item draggable-items card-order-number" data-trips-item-update-path="<%= trip_path(@trip) %>">
             <% @trip_items.order(date: :asc, order: :asc).each do |item| %>
               <%= render 'items/trip_card', trip_item: item %>
             <% end %>
