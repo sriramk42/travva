@@ -34,7 +34,7 @@
           <% if item.photo.present? %>
             <p><%= cl_image_tag item.photo, height: 300, width: 400, crop: :fill %></p>
           <% else %>
-            <div class="<%= item.category.downcase %>" style="height: 300px; width: 400px; display:block;">
+            <div class="<%= item.category.downcase %>" style="height: 300px; width: 400px; display:block; background-size: cover; ">
             </div>
           <% end %>
 
