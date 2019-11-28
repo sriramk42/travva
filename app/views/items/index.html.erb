@@ -1,5 +1,7 @@
 <div class="big-container" style="height: 100vh">
-
+  <div class="row justify-content-center my-2">
+    <h2><em>Places I Want to Visit</em></h2>
+  </div>
   <div class="row d-flex">
     <div class="col-2 dropdown-style-items">
 
@@ -18,7 +20,7 @@
 
     <div class="items-container">
       <div class="col-10 override_col">
-        <% @countries.each do |country| %>
+        <% @item_countries.each do |country| %>
         <div class="country_name">
           <h4><%= country %></h4>
         </div>

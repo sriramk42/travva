@@ -27,7 +27,8 @@ class ItemsController < ApplicationController
 
     @trips = Trip.future
 
-    @countries = Item.select(:country).map(&:country).uniq.reject(&:blank?).map(&:capitalize)
+    @countries = Item.select(:country).map(&:country).uniq.reject(&:blank?)
+    @item_countries = @items.map(&:country).uniq.reject(&:blank?).sort
     # @items = @items.group(:country)
     # raise
   end
