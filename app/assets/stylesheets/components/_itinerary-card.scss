@@ -122,3 +122,42 @@
   color: $cream;
   font-size: 12px;
 }
+
+
+.app-vertical {
+  padding: var(--gutter) 0;
+  display: grid;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: start;
+}
+
+.app-vertical > * {
+  grid-column: 1 / -1;
+}
+
+.app-vertical > .full {
+  grid-column: 1 / -1;
+}
+
+.hs-vertical {
+  display: grid;
+  // grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: repeat(100000, calc(320px - var(--gutter) * 1));
+  // grid-template-rows: minmax(150px, 1fr);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter));
+  padding-left: 10px;
+}
+
+/* Demo styles */
+
+.app-vertical {
+  width: 100%;
+  height: 6vh;
+  background: transparent;
+  overflow-y: scroll;
+  padding: 0px;
+}

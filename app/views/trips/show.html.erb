@@ -26,28 +26,87 @@
 
   <div class="d-flex">
     <div class="justify-content-center small-cards-container">
+      <div class="app-vertical">
+      <ul  class="nav nav-pills hs-vertical">
+        <li class="active">
+          <a  href="#1b" data-toggle="tab">Overview</a>
+        </li>
+      <% @dates.each do |date| %>
+        <li>
+          <%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
+            <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
+            <div class="form-group">
+              <%= f.input :date, as: :hidden, input_html: {value: date} %>
+            </div>
+            <div class="form-group">
+              <%= f.submit date.strftime('%a, %m/%e'), class: "btn"%>
+            </div>
+          <% end %>
+          <%#= link_to date.strftime('%a: %b %w'), trip_path(@trip, date: date) %>
+        </li>
+      <% end %>
+      </ul>
+      </div>
+
+      <div class="tab-content clearfix">
+        <div class="tab-pane active" id="1b">
+          <div class="small-items-container">
+            <div class="override_col">
+              <div class="cards-small-item draggable-items card-order-number" data-trips-item-update-path="<%= trip_path(@trip) %>">
+                <% @trip_items.order(date: :asc, order: :asc).each do |item| %>
+                  <%= render 'items/trip_card', trip_item: item %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="tab-pane" id="<%= trip_path(@trip) %>">
+          <div class="small-items-container">
+            <div class="override_col">
+              <div class="cards-small-item draggable-items card-order-number" data-trips-item-update-path="<%= trip_path(@trip) %>">
+                <#% @trip_items.order(date: :asc, order: :asc).each do |item| %>
+                  <#%= render 'items/trip_card', trip_item: item %>
+                <#% end %>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="map-container-show-page" id="map" style="height: 90vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" %>"></div>
+  </div>
+<!--
+  <div class="d-flex">
+    <div class="justify-content-center small-cards-container">
       <div class="d-flex justify-content-center">
-        <%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
-          <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
+        <%#= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
+          <%#= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
           <div class="form-group dark-dropdown-days">
-            <%= f.input :date, collection: @dates, input_html: {class: 'form-control dark-category'}, required: false, selected: @date, include_blank: 'All' %>
+            <%#= f.input :date, collection: @dates, input_html: {class: 'form-control dark-category'}, required: false, selected: @date, include_blank: 'All' %>
           </div>
           <div class="form-group">
-            <%= f.submit "Search", class: "btn display-none" %>
+            <%#= f.submit "Search", class: "btn display-none" %>
           </div>
-        <% end %>
+        <%# end %>
       </div>
       <div class="small-items-container">
         <div class="override_col">
           <div class="cards-small-item draggable-items card-order-number" data-trips-item-update-path="<%= trip_path(@trip) %>">
-            <% @trip_items.order(date: :asc, order: :asc).each do |item| %>
-              <%= render 'items/trip_card', trip_item: item %>
-            <% end %>
+            <%# @trip_items.order(date: :asc, order: :asc).each do |item| %>
+              <%#= render 'items/trip_card', trip_item: item %>
+            <%# end %>
           </div>
         </div>
       </div>
     </div>
     <div class="map-container-show-page" id="map" style="height: 90vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" %>"></div>
+  </div> -->
 
-  </div>
 </div>
+
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

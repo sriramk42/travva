@@ -32,6 +32,7 @@ class TripsController < ApplicationController
         # flash[:alert] = "No items found for selected date."
       end
     else
+      # raise
       @trip_items = @trip.trip_items
     end
 
@@ -41,6 +42,7 @@ class TripsController < ApplicationController
         lng: trip_item.item.longitude
       }
     end
+
   end
 
   def new
