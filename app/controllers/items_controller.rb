@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
     @trips = Trip.future
 
     @countries = Item.select(:country).map(&:country).uniq.reject(&:blank?).map(&:capitalize)
+    # @items = @items.group(:country)
+    # raise
   end
 
   def new

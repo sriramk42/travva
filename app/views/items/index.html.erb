@@ -18,11 +18,22 @@
 
     <div class="items-container">
       <div class="col-10 override_col">
-        <div class="cards-item">
-          <% @items.each do |item| %>
-           <%= render 'items/card', item: item %>
-          <% end %>
+        <% @countries.each do |country| %>
+        <div class="country_name">
+          <h4><%= country %></h4>
         </div>
+        <% @items_filtered = @items.select{ |item| item.country == country } %>
+        <div class="cards-item">
+            <% @items_filtered.each do |item| %>
+              <%= render 'items/card', item: item %>
+            <% end %>
+          <%# @items.each do |item| %>
+           <%#= render 'items/card', item: item %>
+          <%# end %>
+        </div>
+        <div class="demarcation">
+        </div>
+         <% end %>
       </div>
     </div>
   </div>
