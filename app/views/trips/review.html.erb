@@ -1,0 +1,20 @@
+<div class="container text-center">
+    <h1> <%= @trip.name %> </h1>
+    <h3> <%= @trip.destination %> <h3>
+    <p>From: <%= @trip.start_date %> To: <%= @trip.end_date %> </p>
+  <div class="row">
+    <div class="col-6">
+    <% @date_trip_hash.each do |date_trip| %>
+      <p> Date: <%= date_trip[0] %> </p>
+      <% date_trip[1].each do |titem| %>
+        <% if titem.present? %>
+        <div class="row">
+          <%= titem[0].item.title %>
+          <%= titem[0].item.category %>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -16,13 +16,15 @@ class TripItem < ApplicationRecord
   def delete_order_number
   # if trip.trip_items.count >= 2
     stuff = trip.trip_items.where(date: date).select do |titem|
-      titem.order > self.order
+        if titem.order
+          titem.order > self.order
+        end
       end
       # raise
     stuff.each do |sloth|
       sloth.order -= 1
       sloth.save!
     # end
-      end
+    end
   end
 end

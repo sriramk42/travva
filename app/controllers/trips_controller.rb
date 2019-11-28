@@ -1,4 +1,8 @@
+require 'active_support/core_ext'
+gem 'countries', require: 'countries/global'
+
 class TripsController < ApplicationController
+
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +11,6 @@ class TripsController < ApplicationController
     @future_trips = @trips.future
     @current_trips = @trips.current
     @target_tab = params[:target_tab] || 'current'
-
   end
 
   def show
@@ -59,7 +62,8 @@ class TripsController < ApplicationController
   end
 
   def edit
-
+    c = ISO3166::Country.find_country_by_name(@trip.destination)
+    @country_code = c.alpha2
   end
 
   def update
@@ -76,7 +80,9 @@ class TripsController < ApplicationController
       end
     end
 
-    if @trip.update(trip_params)
+
+    if @trip.attributes = trip_params
+      @trip.save
       redirect_to trips_path(@trip)
     else
       render :edit
@@ -87,6 +93,21 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     redirect_to trips_path
+  end
+
+  def review
+    @trip = Trip.find(params[:trip_id])
+    @trip_items = @trip.trip_items
+    @dates = (@trip.start_date..@trip.end_date).to_a
+    authorize @trip
+
+    @date_trip_hash = Hash.new
+    @dates.each do |tdate|
+      @date_trip_hash[tdate] = Array.new
+      @date_trip_hash[tdate] << @trip_items.select do |trip_item|
+        trip_item.date.to_date == tdate
+      end
+    end
   end
 
   private

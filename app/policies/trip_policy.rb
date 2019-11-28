@@ -24,4 +24,8 @@ class TripPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def review?
+    record.user == user
+  end
 end
