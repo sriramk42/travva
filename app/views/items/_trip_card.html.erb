@@ -9,23 +9,13 @@
 
       <div class="card-body-small-item">
         <div class="card-title-small">
-          <%= trip_item.item.title.capitalize %>
+          <%= trip_item.item.title.upcase %>
         </div>
-        <div class="card-title-small">
+        <div class="card-title-small display-none">
         <%= trip_item.order %>
         </div>
         <div class="card-category-small">
           <%= trip_item.item.category.capitalize %>
-        </div>
-        <div class="card-category-small">
-          <% if trip_item.date.nil? %>
-          <p>No date selected.</p>
-          <%= simple_form_for trip_item, html: {class: 'form-inline dropdown-form'}, remote: true do |f| %>
-          <%= f.input :date, collection: @dates %>
-          <% end %>
-          <% else %>
-          <p><%= trip_item.date.strftime('%A, %b %d') %></p>
-          <% end %>
         </div>
         <div class="card-small-item-rating">
           <% if trip_item.item.rating %>
@@ -38,11 +28,21 @@
           </p>
           <% end %>
         </div>
-        <center>
-          <%= link_to trip_item_path(trip_item), method: :delete do%>
-          <i class=“far trash fa-trash-alt”>Delete</i>
+        <div class="card-category-small dark-dropdown-small">
+          <% if trip_item.date.nil? %>
+          <p>No date selected. Choose a date below.</p>
+          <%= simple_form_for trip_item, html: {class: 'form-inline dropdown-form'}, remote: true do |f| %>
+          <%= f.input :date, collection: @dates %>
           <% end %>
-        </center>
+          <% else %>
+          <p><%= trip_item.date.strftime('%A, %b %d') %></p>
+          <% end %>
+        </div>
+        <div class="trash-small-card">
+          <%= link_to trip_item_path(trip_item), method: :delete do%>
+          <i class="far trash fa-trash-alt"></i>
+          <% end %>
+        </div>
       </div>
     <%= render 'items/trip_card_modal', item: trip_item.item %>
   </div>
