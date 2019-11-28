@@ -1,22 +1,27 @@
 <div class="container mt-5 p-5">
   <div class="row text-center mt-3 justify-content-center pt-3 review-card">
     <div class="col-6">
-      <h1>
-      <%= link_to trip_path(@trip) do %>
-      <i class="fas map fa-backward"></i>
-      <% end %><%= @trip.name %>
-      </h1>
-      <h3><i class="fas map fa-map-marker-alt"></i> <%= @trip.destination %></h3>
-      <p><%= @trip.start_date.strftime('%A %b %e, %y') %> - <%= @trip.end_date.strftime('%A %b %e, %y') %></p>
-      <% @date_trip_hash.each do |date_trip| %>
-      <p><%= date_trip[0].strftime('%a %b %e') %></p>
-      <% date_trip[1].each do |titem| %>
-      <% if titem.present? %>
-      <strong><%= titem[0].item.title %></strong>
-      <p><%= titem[0].item.category %></p>
-      <% end %>
-      <% end %>
-      <% end %>
+      <div class="intro-review">
+        <h1>
+          <%= link_to trip_path(@trip) do %>
+            <i class="fas map fa-backward"></i>
+          <% end %><%= @trip.name %>
+        </h1>
+        <h3><i class="fas map fa-map-marker-alt"></i> <%= @trip.destination %></h3>
+        <p><%= @trip.start_date.strftime('%A %b %e, %y') %> - <%= @trip.end_date.strftime('%A %b %e, %y') %></p>
+      </div>
+        <div class="trip-review-infos">
+        <% @date_trip_hash.each do |date_trip| %>
+        <p class="trip-review-date"><%= date_trip[0].strftime('%A, %b %e') %></p>
+          <% date_trip[1].each do |titem| %>
+       <% if titem.present? %>
+              <%= titem[0].item.title %>
+        <% else %>
+            <p><em>Nothing planned on this day!</em></p>
+        <% end %>
+          <% end %>
+        <% end %>
+        </div>
     </div>
   </div>
 </div>
