@@ -1,6 +1,10 @@
 <div class="big-container" style="height: 100vh">
   <div class="row justify-content-center my-2">
-    <h2><em>Places I Want to Visit</em></h2>
+    <h2 class="title-bucket">Bucket list
+    <%= link_to new_item_path do %>
+      <i class="fas plus fa-plus-circle"></i>
+    <% end %>
+  </h2>
   </div>
   <div class="row d-flex">
     <div class="col-2 dropdown-style-items">
