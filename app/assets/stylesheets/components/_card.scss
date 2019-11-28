@@ -36,13 +36,18 @@
   opacity: 0.8;
 }
 
+.review-card {
+    border: solid 40px #F0E9D7;
+    background-color: #F0E9D7;
+    border-radius: 120px;
+    margin-right: 10px;
+
 .demarcation {
   height: 2px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: lighter;
-}
-
+  
 .country_name {
   background-color: $cream;
   text-align: center;
