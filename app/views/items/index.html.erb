@@ -6,7 +6,7 @@
       <%= simple_form_for :search, object: @search, url: items_path, method:
       "GET" do |f| %>
         <% p @search %> <%= f.input :country, label: "Country",
-        collection: Item::COUNTRY, required: false, as: :check_boxes %>
+        collection: @countries, required: false, as: :check_boxes %>
         <%= f.input :category, label: "Category", collection: Item::CATEGORY,
         required: false, as: :check_boxes %>
         <div style="text-align: center;">
@@ -18,11 +18,22 @@
 
     <div class="items-container">
       <div class="col-10 override_col">
-        <div class="cards-item">
-          <% @items.each do |item| %>
-           <%= render 'items/card', item: item %>
-          <% end %>
+        <% @countries.each do |country| %>
+        <div class="country_name">
+          <h4><%= country %></h4>
         </div>
+        <% @items_filtered = @items.select{ |item| item.country == country } %>
+        <div class="cards-item">
+            <% @items_filtered.each do |item| %>
+              <%= render 'items/card', item: item %>
+            <% end %>
+          <%# @items.each do |item| %>
+           <%#= render 'items/card', item: item %>
+          <%# end %>
+        </div>
+        <div class="demarcation">
+        </div>
+         <% end %>
       </div>
     </div>
   </div>
