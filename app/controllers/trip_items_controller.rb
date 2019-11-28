@@ -43,6 +43,10 @@ class TripItemsController < ApplicationController
     else
       flash.now[:alert] = 'Could not update this item. Sorry!'
     end
+    respond_to do |format|
+      format.html { redirect_to trip_path(@trip_item.trip) }
+      format.js
+    end
   end
 
   private
