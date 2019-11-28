@@ -1,19 +1,19 @@
-.intro-review {
+.introreview {
   padding: 10px;
   margin: 10px;
 }
 
-.intro-review h1 {
+.introreview h1 {
   padding: 10px;
   margin: 15px;
 }
 
-.intro-review h3 {
+.introreview h3 {
   padding: 10px;
   margin: 15px;
 }
 
-.intro-review p {
+.introreview p {
   background-color: $brown;
   margin-right: 33px;
   margin-left: 33px;
@@ -21,6 +21,8 @@
   color: $cream;
 }
 
-.trip-review-infos {
 
+.name-review {
+  color: $brown;
+  font-weight: bold;
 }
