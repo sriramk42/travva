@@ -1,0 +1,88 @@
+:root {
+  --gutter: 20px;
+}
+
+.app {
+  padding: var(--gutter) 0;
+  display: grid;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: start;
+}
+
+.app > * {
+  grid-column: 2 / -2;
+}
+
+.app > .full {
+  grid-column: 1 / -1;
+}
+
+.hs {
+  display: grid;
+  // grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: repeat(100000, calc(320px - var(--gutter) * 2));
+  // grid-template-rows: minmax(150px, 1fr);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter));
+}
+
+/* Demo styles */
+
+.app {
+  width: 100vw;
+  height: 400px;
+  background: transparent;
+  overflow-y: scroll;
+}
+
+.card-picture-medium {
+  width: 125px;
+  height: 100%;
+  background-size: cover;
+  border-radius: 4px;
+}
+.card-body-medium {
+  padding: 0px;
+  width: 150px;
+  height: 200px;
+}
+
+.card-index-medium {
+  border: solid 15px transparent;
+  background-color: rgba($brown, .7);
+  border-radius: 4px;
+  display: flex;
+  position: relative;
+  width: 275px;
+  height: 200px;
+}
+
+.card-body-medium-item {
+  padding: 5%;
+  width: 50%;
+}
+
+.card-title-medium {
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+  color: $cream;
+}
+
+.card-category-medium {
+  text-align: right;
+  font-size: 10px;
+  font-style: italic;
+  color: $cream;
+}
+
+.card-medium-item-rating {
+  text-align: right;
+  font-size: 10px !important;
+}
+
+
