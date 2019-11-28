@@ -1,8 +1,8 @@
 <div class="trips-show-container">
+  <h2>Hey <%= current_user.first_name %>! Here are the details for your trip to <%= @trip.destination%>.</h2>
+  <%= link_to "REVIEW MY TRIP", trip_review_path(@trip), class: "btn dark-button"%>
 
-  <%= link_to "My trip", trip_review_path(@trip), class: "btn dark-button"%>
-
-  <button id="hide-button" class="btn dark-button">My items</button>
+  <button id="hide-button" class="btn dark-button">VIEW SAVED ITEMS FOR <%= @trip.destination.upcase %></button>
   <div class="app" id="hide-items">
     <div class="d-flex">
       <%= simple_form_for :query, url: trip_path(@trip), method:'GET', html: {class: 'form-inline dropdown-form'} do |f| %>
@@ -29,18 +29,14 @@
       <div class="app-vertical">
       <ul  class="nav nav-pills hs-vertical">
         <li class="active">
-          <a  href="#1b" data-toggle="tab">Overview</a>
+          <button  href="#1b" data-toggle="tab" class="dark-button-small">Overview</button>
         </li>
       <% @dates.each do |date| %>
-        <li>
-          <%= simple_form_for :search, url: trip_path(@trip), method:'GET', html: {class: 'form-inline'} do |f| %>
+        <li style="width: 115px">
+          <%= simple_form_for :search, url: trip_path(@trip), method:'GET' do |f| %>
             <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
-            <div class="form-group">
-              <%= f.input :date, as: :hidden, input_html: {value: date} %>
-            </div>
-            <div class="form-group">
-              <%= f.submit date.strftime('%a, %m/%e'), class: "btn"%>
-            </div>
+              <%= f.input :date, as: :hidden, input_html: {value: date}, html: {class: 'dark-button-small'} %>
+              <button class="dark-button-small"><%= f.submit date.strftime('%a, %m/%e')%></button>
           <% end %>
           <%#= link_to date.strftime('%a: %b %w'), trip_path(@trip, date: date) %>
         </li>

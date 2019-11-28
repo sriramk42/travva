@@ -43,27 +43,24 @@
   }
 }
 
-
-
 .dark-button-small {
   color: $brown;
-  padding: 7px 20px;
+  padding: 8px 24px;
   border-radius: 4px;
   margin-top: 8px;
   font-weight: bold;
-  font-size: 11px;
-  background: $cream;
+  font-size: 14px;
+  background: transparent;
   transition: background 0.1s ease;
-  border: 1px solid $cream;
-
-   &:hover{
-    background: $cream;
-    color: $brown;
-    border-color: $cream;
-    opacity: .7;
-    text-decoration: none;
-  }
+  border: 1px solid transparent;
 }
+
+  .dark-button-small input {
+  background-color: transparent;
+  border-color: transparent;
+  margin-top: 0;
+  }
+
 
 .dark-button-small-item {
   color: $cream ;
