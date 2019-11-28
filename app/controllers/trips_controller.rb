@@ -29,7 +29,7 @@ class TripsController < ApplicationController
       @date = params[:search][:date]
       @trip_items = current_user.trip_items.where(date: Date.parse(params[:search][:date]))
       if @trip_items.empty?
-        flash[:alert] = "No items found for selected date."
+        # flash[:alert] = "No items found for selected date."
       end
     else
       @trip_items = @trip.trip_items

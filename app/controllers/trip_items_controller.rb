@@ -11,6 +11,7 @@ class TripItemsController < ApplicationController
 
     authorize @trip_item
       if @trip_item.save
+        @dates = (@trip_item.trip.start_date..@trip_item.trip.end_date).to_a
         if @trip_item.date
           @trip_items = @trip_item.trip.trip_items.where(date: @trip_item.date)
         else
