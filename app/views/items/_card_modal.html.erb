@@ -31,7 +31,13 @@
           <% end %>
         </div>
         <div class="m-2 p-2">
-          <p><%= cl_image_tag item.photo, height: 300, width: 400, crop: :fill %></p>
+          <% if item.photo.present? %>
+            <p><%= cl_image_tag item.photo, height: 300, width: 400, crop: :fill %></p>
+          <% else %>
+            <div class="<%= item.category.downcase %>" style="height: 300px; width: 400px; display:block;">
+            </div>
+          <% end %>
+
         </div>
       </div>
     </div>
