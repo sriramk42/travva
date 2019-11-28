@@ -11,6 +11,11 @@
  margin-bottom: 10px !important;
 }
 
+.dark-dropdown .form-group {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
 .dark-dropdown-days {
  color: $brown;
  border: none;
@@ -55,9 +60,9 @@
 }
 
 
-.dark-category:hover {
-  opacity: 1;
-  color: $cream;
-  background: $brown;
-}
+// .dark-category:hover {
+//   opacity: 1;
+//   color: $cream;
+//   background: $brown;
+// }
 
