@@ -142,7 +142,7 @@
 .hs-vertical {
   display: grid;
   // grid-gap: calc(var(--gutter) / 2);
-  grid-template-columns: repeat(100000, calc(320px - var(--gutter) * 1));
+  grid-template-columns: repeat(100000, calc(125px - var(--gutter) * 1));
   // grid-template-rows: minmax(150px, 1fr);
 
   overflow-x: scroll;
@@ -152,12 +152,20 @@
   padding-left: 10px;
 }
 
+.hs-vertical .form-group {
+  margin: 0px !important;
+  }
+
 /* Demo styles */
 
 .app-vertical {
   width: 100%;
-  height: 6vh;
+  height: 10vh;
   background: transparent;
   overflow-y: scroll;
   padding: 0px;
+}
+
+.date-button .form-inline {
+  padding: none !important;
 }
