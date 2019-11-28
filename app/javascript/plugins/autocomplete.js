@@ -8,9 +8,7 @@ function autocomplete() {
     var Address = document.getElementById("item_address");
 
     if (Address) {
-      var autocomplete = new google.maps.places.Autocomplete(Address, {
-        types: ["geocode"]
-      });
+      var autocomplete = new google.maps.places.Autocomplete(Address);
       autocomplete.addListener("place_changed", () => {
         var place = autocomplete.getPlace();
         var components = getAddressComponents(place);
