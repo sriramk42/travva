@@ -29,7 +29,11 @@
       <div class="app-vertical">
       <ul  class="nav nav-pills hs-vertical">
         <li class="active">
-          <button  href="#1b" data-toggle="tab" class="dark-button-small">Overview</button>
+          <%= simple_form_for :search, url: trip_path(@trip), method:'GET' do |f| %>
+            <%= hidden_field_tag 'query[category]', params[:query][:category] if params[:query] %>
+              <%#= f.input :date, as: :hidden, input_html: {value: date}, html: {class: 'dark-button-small'} %>
+              <button class="dark-button-small">Overview</button>
+          <% end %>
         </li>
       <% @dates.each do |date| %>
         <li style="width: 115px">
@@ -69,7 +73,7 @@
         </div> -->
       </div>
     </div>
-    <div class="map-container-show-page" id="map" style="height: 90vh; position: sticky; top: 0px;" data-markers="<%= @markers.to_json %>" %>"></div>
+    <div class="map-container-show-page" id="map" style="height: 90vh; position: sticky; top: 0px; border-radius: 4px;" data-markers="<%= @markers.to_json %>" %>"></div>
   </div>
 <!--
   <div class="d-flex">
