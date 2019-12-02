@@ -1,5 +1,5 @@
 meta_product_name: "Travva"
 meta_title: "Travva - Simplify your Travel with Travva"
 meta_description: "Simplify your Travel with Travva"
-meta_image: "Travvahome.png" # should exist in `app/assets/images/`
+meta_image: "travva_og.png" # should exist in `app/assets/images/`
 twitter_account: "@LeWagonTokyo"
