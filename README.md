@@ -2,7 +2,7 @@
 
 Travva helps you simplify your travel by having a simple interface to add items to your bucket list and plan your itinerary off the bucket list.
 
-<img src="./my-bookshelf.png" width="500" />
+<img src="./Travva.png" width="500" />
 Check it here: http://www.travva.me/
  
 ## Getting Started
