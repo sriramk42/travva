@@ -32,8 +32,8 @@ rake start
 
 ## Built With
 - [Rails 5 API](https://edgeguides.rubyonrails.org/api_app.html) - Backend
-- [Google Maps API] (https://console.developers.google.com/apis/dashboard) - Maps and Places Autocomplete
-- [Triposo] () - (https://www.triposo.com/) - Triposo for suggestions
+- [Google Maps API](https://console.developers.google.com/apis/dashboard) - Maps and Places Autocomplete
+- [Triposo](https://www.triposo.com/) - Triposo for suggestions
 - [Trello] — Task management
 - [Figma](https://www.figma.com/file/2Hm6kITNlx4NL8T7q2rKtT/TRAVVA?node-id=2%3A0) — Prototyping
 
